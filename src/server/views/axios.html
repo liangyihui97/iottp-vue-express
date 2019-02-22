@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可排序的表格组件</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+<div id="app" >
+{{data}}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+var app = new Vue({
+        el: '#app',
+        data() {return{
+		    columns: [],
+		    data: []}
+		       
+ },
+        methods : {
+            handleAddData: function () {
+                this.data.push({
+                    name: '刘小天',
+                    age: 19,
+                    birthday: '1998-05-30',
+                    address: '北京市东城区东直门'
+                });
+            },
+        },
+        mounted (){
+var self = this;
+    axios
+.get('http://192.168.227.10:4000/api/data')
+.then(function(response){
+self.data = response.data.data;
+self.columns = response.data.columns;
+});
+}
+    });
+</script>
+</body>
+</html>
+</script>
