@@ -1,0 +1,13 @@
+body{background: white;color: #001327;
+    font: 14px/1.5 "PingFang SC", "微软雅黑", "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;}
+.logo-a{color: #001327}
+.logo-a:hover{color: #001327}
+#header{height: 90px;width: 100%; background: #bee2ff;box-shadow:0 0 10px #229af9;}
+#logo{margin-top: -5px;margin-left: 100px;width: 250px;}
+a{cursor:pointer;}
+.logo-font{margin-top: 31px}
+.logo-font-strong{font-size: 17px}
+#nav{margin-left: 100px;}
+.menu{line-height: 90px; font-size: 16px}
+.menu ul li{float: left;}
+li{margin-right: 30px}

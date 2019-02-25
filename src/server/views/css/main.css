@@ -1,0 +1,14 @@
+html,body{height: 100%}
+.gary-bg{background-color: #f3f3f4;height: 100%;}
+.login{margin: 0 auto; padding: 100px 20px 20px 20px;max-width:800px}
+.ibox-content {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+}
+.m-t{margin-top: 20px}
+.col-md-12{margin-top: 20px}

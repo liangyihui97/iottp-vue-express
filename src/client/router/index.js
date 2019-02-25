@@ -6,13 +6,15 @@ import store from './../store/store'
 
 // 导入相应的子组件
 import Hello from './../components/Hello'
+import Teach from './../components/Teach'
 
 Vue.use(Router)
 
 var router = new Router({
   mode: 'history',
   routes: [
-    { name: 'hello', path: '/hello', component: Hello }
+    { name: 'hello', path: '/hello', component: Hello },
+    { name: 'teach', path: '/teach', component: Teach }
   ]
 })
 
