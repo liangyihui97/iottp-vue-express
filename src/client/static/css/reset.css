@@ -1,7 +1,6 @@
 body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
 h1, .h1, h2, .h2, h3, .h3 {margin-top: 20px;margin-bottom: 10px;}
 body{font-family: "open sans", "Helvetica Neue", 微软雅黑, Helvetica, Arial, sans-serif;
-    background-color: rgb(47, 64, 80);
     font-size: 13px;
     color: rgb(103, 106, 108);
     overflow-x: hidden;}
@@ -16,7 +15,7 @@ img{border: none;}
 li{list-style: none;}
 input,select,textarea{outline:none;border:none;background:none;}/*background:none兼容IE6*/
 textarea{resize:none;}
-a{text-decoration: none;color: #595959;}
+a{text-decoration: none;color: #595959;cursor:pointer;}
 a:hover{text-decoration: none;color: #2196F3}
 /*清除浮动*/
 .clearfix:after{content:"";display: block;clear: both;}
