@@ -9,10 +9,12 @@ Vue.config.debug = true
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 
-new Vue({
+var app = new Vue({
   el: '#app',
   router: router,
   store: store,
   template: '<App/>',
   components: { App }
-})
+});
+
+

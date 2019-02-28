@@ -1,5 +1,4 @@
-
-dy{background: white;color: #001327;
+body{background: white;color: #001327;
     font: 14px/1.5 "PingFang SC", "微软雅黑", "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;}
 .logo-a{color: #001327;cursor:pointer;}
 .logo-a:hover{color: #001327}
@@ -18,10 +17,27 @@ dy{background: white;color: #001327;
 #login{line-height: 90px;margin-right: 60px}
 
 /*滑动*/
-#main{width: 1400px;margin: 0 auto;text-align: center}
-.banner-title{width:110px;margin: 10px  auto;padding: 10px 0;font-size: 16px;color: #001327;background-color: #bee2ff;border-radius: 20px;}
+.body{width: 100%;height: 2000px;background-color: #f5f5f6; margin-top: 2px}
+#main{width: 1400px;height:1000px;margin: 0 auto;text-align: center;padding-top: 5px}
+.news{width:1400px;height:50px;margin-top: 10px ;font-size: 16px;color: #001327;}
+.banner-title-both{width:250px;height:50px;margin: 0 auto;text-align: center}
+.banner-title img{padding-top: 5px;padding-left: 10px;padding-right: 10px}
+.img-r{-moz-transform: scaleX(-1);-webkit-transform: scaleX(-1);-o-transform: scaleX(-1);transform: scaleX(-1);}
+.banner-title strong{background-color: #bee2ff;border-radius: 20px;padding: 10px 10px;}
 
-.banner-box{margin-left: 215px;margin-top: -40px}
+
+.banner-content{margin-left: 100px;height: 400px; width:100px; color: #fff;}
+.banner-content ul{margin-left: 30px;}
+.banner-content li{background-color: #001327;width:195px;height:80px;border: #ffffff solid 1px;text-align: left;padding-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}/*多行文字居中*/
+.banner-content a{color: #fff ;}
+.banner-content a:hover{color: #22a0ff}
+
+.banner-box{margin-left: 133px;margin-top: -45px}
 label:hover{color:#ddd!important}
 label,#active,img{-moz-user-select:none;-webkit-user-select:none}
 .catch{display:block;height:0;overflow:hidden}
@@ -70,3 +86,24 @@ article img{width:100%}
 @media only screen and (min-width:850px){
 
 }
+
+.main-class{width: 1400px;height:1000px;margin: 20px auto;position: absolute;top:550px}
+
+
+
+/*视频栏*/
+/*标签页组件*/
+.tabs-bar{width:1000px;height: 50px}
+.tabs-tab{float: left}
+
+.video{width:1000px;height:50px;margin-top: 10px ;font-size: 16px;color: #001327;}
+.u-clist{cursor: pointer;}
+.video-content{margin-bottom: 0;height: 150px;padding: 20px 0 20px 0;border-bottom: 1px solid #e6e6e6;}
+.video-content:hover{background-color: #e0e0e0;transition: all 200ms;}
+.content-title{font-size: 17px;}
+.content-main{ position:relative;width: 600px;text-align: left;font-size: 13px;margin-top: 80px;margin-left: -85px}
+
+
+/*资料栏*/
+.other{width:400px;height:500px;margin-top: 10px ;font-size: 16px;color: #001327;}
+
