@@ -1,6 +1,7 @@
-Vue + Express 前后端脚手架
+Vue的物联网用户平台
 =========================================
 
+基于vue-express开发，首页通过前端路由能够跳转到教学部分。
 在原版本基础之上，修改了webpack的相关配置文件。使得项目可以运行build命令，编译vue相关代码。
 前端部分增加了vue全家桶（vue-router，vuex）
 后端express部分增加有history模式，支持前端路由。需要传统后端路由方式的话，请注释掉`server/index.js`中`app.use(history())`
@@ -15,7 +16,8 @@ Vue + Express 前后端脚手架
 fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/southerncross/vue-express-dev-boilerplate)
 
 ## 关键词
-
+- 物联网
+- 教学
 - Vue (vue-router + vuex)
 - Express
 - Nodemon
