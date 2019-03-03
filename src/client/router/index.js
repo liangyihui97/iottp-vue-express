@@ -5,7 +5,7 @@ import Router from 'vue-router'
 import store from './../store/store'
 
 // 导入相应的子组件
-import Hello from './../components/Hello'
+import Index from './../components/Index'
 import Teach from './../components/Teach'
 
 Vue.use(Router)
@@ -13,7 +13,8 @@ Vue.use(Router)
 var router = new Router({
   mode: 'history',
   routes: [
-    { name: 'hello', path: '/hello', component: Hello },
+    {path: '/',redirect: '/index'},
+    { name: 'index', path: '/index', component: Index },
     { name: 'teach', path: '/teach', component: Teach }
   ]
 })

@@ -39,8 +39,11 @@ app.use(express.static(path.join(__dirname, 'views')))
 app.get('/', function (req, res) {
   res.sendFile('./views/index.html')
 })
-app.get('/about', function (req, res) {
-  res.sendFile('./views/about.html')
+app.get('/index', function (req, res) {
+  res.sendFile('./views/index.html')
+})
+app.get('/login', function (req, res) {
+  res.sendFile('./views/login.html')
 })
 app.get('/api/data',function(req,res){
  res.json({
