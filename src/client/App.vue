@@ -32,13 +32,6 @@
         </div>
         <div class="body">
             <div id="main">
-                <div class="banner-title news">
-                    <div class="banner-title-both">
-                        <img class="img-l fl" src="./static/images/news.png" width="30" height="30">
-                        <strong class="fl">物联网新闻</strong>
-                        <img class="img-r fl" src="./static/images/news.png" width="30" height="30">
-                    </div>
-                </div>
                 <div class="banner-slider">
                     <div class="banner-content fl">
                         <div class="fl">
@@ -114,13 +107,12 @@
                 <div class="main-class">
                     <div class="banner-title video fl">
                         <div class="banner-title-both">
-                            <img class="img-l fl" src="./static/images/video.png" width="30" height="30">
+                            <img class="img-l fl" src="./static/images/video.png" width="40" height="40">
                             <strong class="fl">物联网视频</strong>
-                            <img class="img-r fl" src="./static/images/video.png" width="30" height="30">
                         </div>
                         <div id="app" v-cloak>
                     <tabs v-model="activeKey">
-                        <pane label="标签一" name="1">
+                        <pane label="全部视频" name="1">
                             <div>
                             <div class="video-content u-clist">
                                 <div class="video-img fl"><img src="./static/images/video01.png"></div>
@@ -196,7 +188,7 @@
                             </div>
                             </div>
                         </pane>
-                        <pane label="标签二" name="2">
+                        <pane label="正在进行" name="2">
 
                             <div>
                                 </div>
@@ -273,7 +265,7 @@
                                 </div>
                             </div>
                         </pane>
-                        <pane label="标签三" name="3">
+                        <pane label="即将开始" name="3">
                             <div>
                                 <div class="video-content u-clist">
                                     <div class="video-img fl"><img src="./static/images/video05.jpg"></div>
@@ -357,15 +349,14 @@
                
            <div class="banner-title other fr">
                 <div class="banner-title-both  ">
-                    <img class="img-l fl" src="./static/images/other.png" width="30" height="30">
+                    <img class="img-l fl" src="./static/images/other.png" width="40" height="40">
                     <strong class="fl">热门资源</strong>
-                    <img class="img-r fl" src="./static/images/other.png" width="30" height="30">
                 </div>
                 <div class="data-all">
                     <template v-for="txt in txts">
                         <div class="data fl">
                             <a>
-                            <img :src="txt.src" width="30" height="30" class="fl">
+                            <img :src="txt.src" width="20" height="20" class="fl">
                             <div class="fl">
                                 {{txt.content}}
                             </div>

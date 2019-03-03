@@ -27,11 +27,11 @@ body{background: white;color: #001327;
 /*滑动*/
 .body{width: 100%;height: 2000px;background-color: #f5f5f6; margin-top: 9px}
 #main{width: 1400px;height:1000px;margin: 0 auto;text-align: center;padding-top: 5px}
-.news{width:1400px;height:50px;margin-top: 10px ;font-size: 16px;color: #001327;}
-.banner-title-both{width:200px;height:50px;margin: 0 auto;text-align: center}
+.banner-title-both{width:200px;height:50px;text-align: left}
 .banner-title img{padding-top: 5px;padding-left: 10px;padding-right: 10px}
+.banner-title-both img{padding-top: 6px;}
 .img-r{-moz-transform: scaleX(-1);-webkit-transform: scaleX(-1);-o-transform: scaleX(-1);transform: scaleX(-1);}
-.banner-title strong{background-color: #bee2ff;border-radius: 20px;padding: 10px 10px;}
+.banner-title strong{padding: 9px 0;font-size: 20px}
 
 
 .banner-content{margin-left: 100px;height: 400px; width:100px;}
@@ -95,7 +95,7 @@ article img{width:100%}
 
 }
 
-.main-class{width: 1400px;height:1000px;margin: 20px auto;position: absolute;top:550px}
+.main-class{width: 1400px;height:1000px;margin: 0 auto;position: absolute;top:550px}
 
 
 
@@ -120,7 +120,7 @@ article img{width:100%}
 
 }
 
-.video{width:1000px;height:50px;margin-top: 10px ;font-size: 16px;color: #001327;}
+.video{width:1000px;height:50px;font-size: 16px;color: #001327;}
 .u-clist{cursor: pointer;}
 .video-content{margin-bottom: 0;height: 150px;padding: 20px 0 20px 0;border-bottom: 1px solid #e6e6e6;}
 .video-content:hover{background-color: #e0e0e0;transition: all 200ms;-webkit-transform: scale(1.05);-moz-transform: scale(1.05);-ms-transform: scale(1.05);-o-transform: scale(1.05);transform: scale(1.05); }
