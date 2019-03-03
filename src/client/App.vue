@@ -23,7 +23,7 @@
                 </div>
                 <div class="header_second_search fl">
                     <input type="text" class="search_text">
-                    <input type="submit" value="搜 索" class="search_btn fr">
+                    <input type="submit" value="" class="search_btn fr">
                 </div>
                 <div id="login" class="fr">
                     <a href="#">登 录</a>  /  <a href="#">注 册</a>
@@ -411,20 +411,20 @@ components:{pane,tabs},
       activeKey: '1',
       txts:[
                 {
-                    src:'./static/images/logo.png',
+                    src:require('./static/images/01xls.png'),
                     content: '物联网教学表格.xls'
                 },
                 {
-                    src:'/static/images/02doc.png',
+                    src:require('./static/images/02doc.png'),
                     content: '物联网教学文档资料.txt'
                 },
 
                 {
-                    src:'/static/images/03pdf.png',
+                    src:require('./static/images/03pdf.png'),
                     content: '物联网导论.pdf'
                 },
                 {
-                    src:"./static/images/04ppt.png",
+                    src:require("./static/images/04ppt.png"),
                     content: '物联网教学.ppt'
                 }
             ]

@@ -2,8 +2,8 @@ body{background: white;color: #001327;
     font: 14px/1.5 "PingFang SC", "微软雅黑", "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;}
 .logo-a{color: #001327;cursor:pointer;}
 .logo-a:hover{color: #001327}
-#header{height:90px;background: #bee2ff }
-#header_top{height: 90px;width: 1400px; margin: 0 auto;box-shadow:0 0 10px #229af9;}
+#header{height:90px;background: #bee2ff; box-shadow:0px 5px 10px #ababab;}
+#header_top{height: 90px;width: 1400px; margin: 0 auto;}
 #logo{margin-top: -5px;margin-left: 50px;width: 250px;}
 .logo-font{margin-top: 31px;position: relative}
 .logo-font-strong{font-size: 17px}
@@ -11,13 +11,21 @@ body{background: white;color: #001327;
 .menu ul{line-height: 90px;float:left;}
 .menu li{float:left;}
 .header_second_nav{height: 35px;background-color: #ffffff;}
-.search_btn{width:70px;height: 39px;/*35+4*/background: linear-gradient(to right, #3e3e3e,#001327);color:#fff;border-top-right-radius:20px;border-bottom-right-radius:20px;}
+.search_btn{cursor: pointer;width:50px;height: 39px;/*35+4*/background: linear-gradient(to right, #3e3e3e,#001327);color:#fff;border-top-right-radius:20px;border-bottom-right-radius:20px;}
 .search_text{width:100px;height:25px;padding-top:5px;padding-bottom:5px;padding-left:10px;background:#fff;border-top-left-radius:20px;border-bottom-left-radius:20px;border: 2px solid #3E3E3E;}
-.header_second_search{width: 184px;height: 35px; margin-top: 28px;margin-left: 60px}
+.header_second_search{width: 164px;height: 35px; margin-top: 28px;margin-left: 60px;position: relative;}/*before之前要relative*/
+.header_second_search:before{position: absolute;background: url("../images/serach.png") no-repeat center /32px 32px; ;
+    content: '';
+    top: 6px;
+    left: 122px;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+   cursor: pointer;}
 #login{line-height: 90px;margin-right: 60px}
 
 /*滑动*/
-.body{width: 100%;height: 2000px;background-color: #f5f5f6; margin-top: 2px}
+.body{width: 100%;height: 2000px;background-color: #f5f5f6; margin-top: 9px}
 #main{width: 1400px;height:1000px;margin: 0 auto;text-align: center;padding-top: 5px}
 .news{width:1400px;height:50px;margin-top: 10px ;font-size: 16px;color: #001327;}
 .banner-title-both{width:200px;height:50px;margin: 0 auto;text-align: center}
@@ -26,15 +34,15 @@ body{background: white;color: #001327;
 .banner-title strong{background-color: #bee2ff;border-radius: 20px;padding: 10px 10px;}
 
 
-.banner-content{margin-left: 100px;height: 400px; width:100px; color: #fff;}
-.banner-content ul{margin-left: 30px;}
-.banner-content li{background-color: #001327;width:195px;height:80px;border: #ffffff solid 1px;text-align: left;padding-left: 5px;
+.banner-content{margin-left: 100px;height: 400px; width:100px;}
+.banner-content ul{margin-left: 30px;border-bottom-left-radius:8px;border-top-left-radius:8px;background-color: #2b333b;}
+.banner-content li{width:195px;height:80px;border: #ffffff solid 1px;text-align: left;padding-left: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     }/*多行文字居中*/
-.banner-content a{color: #fff ;}
+.banner-content a{color: rgba(255, 255, 255, 0.8);}
 .banner-content a:hover{color: #22a0ff}
 
 .banner-box{margin-left: 133px;margin-top: -45px}
