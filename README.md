@@ -28,34 +28,11 @@ fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/souther
 ## 文件目录
 
 ```
-.
-├── LICENSE
-├── README.md
-├── nodemon.json
-├── package.json
-├── src
-│   ├── client
-│   │   ├── App.vue
-│   │   ├── components
-│   │   │   └── Hello.vue
-│   │   │── static
-│   │   │── router
-│   │   │── store
-│   │   │── views
-│   │   └── index.js
-│   └── server
-│       ├── index.js
-│       ├── config
-│       ├── dao
-│       ├── model
-│       ├── router
-│       ├── public
-│       │   └── favicon.ico
-│       └── views
-│             └── index.html
+iottp-vue-express
+├── .babelrc
 ├── build
 │   ├── build.js
-│   ├── clicheck-version.js
+│   ├── check-versions.js
 │   ├── dev-client.js
 │   ├── utils.js
 │   ├── vue-loader.conf.js
@@ -63,9 +40,43 @@ fork源：[southerncross/vue-express-dev-boilerplate](https://github.com/souther
 │   ├── webpack.dev.conf.js
 │   └── webpack.prod.conf.js
 ├── config
-     ├── dev.env.js
-     ├── index.js
-     └── prod.env.js
+│   ├── dev.env.js
+│   ├── index.js
+│   └── prod.env.js
+├── dist
+│   ├── index.html
+│   └── static
+│       ├── css
+│       ├── images
+│       ├── img
+│       ├── js
+│       └── Readme.md
+├── .eslintrc
+├── .gitignore
+├── index.js
+├── LICENSE
+├── nodemon.json
+├── package.json
+├── package-lock.json
+├── README.md
+└── src
+    ├── client
+    │   ├── App.vue
+    │   ├── .App.vue.swp
+    │   ├── components
+    │   ├── index.js
+    │   ├── router
+    │   ├── static
+    │   ├── store
+    │   └── views
+    └── server
+        ├── config
+        ├── dao
+        ├── index.js
+        ├── model
+        ├── public
+        ├── router
+        └── views
 ```
 
 ## 用法
