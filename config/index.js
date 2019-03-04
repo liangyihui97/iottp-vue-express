@@ -23,19 +23,18 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 8080,
+    port: 4000,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-        '/apis': {
-            // 测试环境
-            target: 'https://goods.footer.com',  // 接口域名
-            changeOrigin: true,  //是否跨域
-            pathRewrite: {
-                '^/apis': ''   //需要rewrite重写的,
-            }              
+      '/api': {
+        target: 'http://121.41.130.58:9090',//设置你调用的接口域名和端口号 别忘了加http
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''//这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://40.00.100.100:3002/user/add'，直接写‘/api/user/add’即可
         }
+      }
     },
 
     // CSS Sourcemaps off by default because relative paths are "buggy"

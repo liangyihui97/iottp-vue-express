@@ -39,7 +39,7 @@
     </div>
  <div class="app full-height">
     <h1>{{ message }}</h1>
-   {{data}}{{columns}}
+   {{data}}{{columns}}{{data2}}
    
 
 <a href="http://192.168.227.10:4000/about.html">trun to about</a>
@@ -58,21 +58,21 @@ export default {
       message: 'Express + Vue boilerplate-Konata9',
       columns: [],
       data: [],
-      
+      data2: [],
     }
   },
         mounted (){
-var self = this;
+    var self = this;
     this.$axios.get('http://192.168.227.10:4000/api/data').then(function(response){
 	self.data = response.data.data;
 	self.columns = response.data.columns;
 });
-this.$axios.get( '/apis/health/list',{params: obj})
-            .then(function(res){
-       // 成功回调
-            },function(){
-              alert("error")
-            })
+this.$axios.get('/v2/music/search?q=周杰伦',).then(function (response) {
+        self.data2 = response.data.musics;
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
 },
 
 };

@@ -6,7 +6,8 @@ import bodyParser from 'body-parser'
 import webpack from 'webpack'
 //import fs from 'fs'
 //import http from 'http'
-
+import proxy from 'http-proxy-middleware'// 代理插件
+import cors from 'cors'// 跨域插件
 // 引入history模块
 import history from 'connect-history-api-fallback'
 
@@ -17,7 +18,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from '../../build/webpack.dev.conf'
 
 const app = express()
-
+app.use(cors())
 // 引入history模式让浏览器进行前端路由页面跳转,刷新时不会出错
 app.use(history())
 
@@ -82,6 +83,10 @@ app.get('/api/data',function(req,res){
             ]
         })
 })
+app.use('/v2', proxy({
+    target: 'https://api.douban.com',
+    changeOrigin: true
+}))
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found')
