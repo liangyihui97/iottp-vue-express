@@ -77,7 +77,7 @@
                 <div class="banner-title video fl">
                     <div class="banner-title-both">
                         <img class="img-l fl" src="../static/images/video.png" width="40" height="40">
-                        <strong class="fl">物联网视频</strong>
+                        <strong class="fl">教学视频</strong>
                     </div>
                     <div id="app" v-cloak>
                         <tabs v-model="activeKey">

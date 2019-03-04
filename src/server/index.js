@@ -4,6 +4,8 @@ import favicon from 'serve-favicon'
 import logger from 'morgan'
 import bodyParser from 'body-parser'
 import webpack from 'webpack'
+//import fs from 'fs'
+//import http from 'http'
 
 // 引入history模块
 import history from 'connect-history-api-fallback'
@@ -16,8 +18,8 @@ import config from '../../build/webpack.dev.conf'
 
 const app = express()
 
-// 引入history模式让浏览器进行前端路由页面跳转
-//app.use(history())
+// 引入history模式让浏览器进行前端路由页面跳转,刷新时不会出错
+app.use(history())
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
@@ -37,9 +39,6 @@ app.use(webpackHotMiddleware(compiler))
 
 app.use(express.static(path.join(__dirname, 'views')))
 app.get('/', function (req, res) {
-  res.sendFile('./views/index.html')
-})
-app.get('/index', function (req, res) {
   res.sendFile('./views/index.html')
 })
 app.get('/login', function (req, res) {

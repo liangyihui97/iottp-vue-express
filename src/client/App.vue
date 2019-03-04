@@ -26,7 +26,7 @@
                     <input type="submit" value="" class="search_btn fr">
                 </div>
                 <div id="login" class="fr">
-                    <a href="#">登 录</a>  /  <a href="#">注 册</a>
+                    <a href="login.html">登 录</a>  /  <a href="#">注 册</a>
                 </div>
             </div>
         </div>
@@ -63,12 +63,16 @@ export default {
   },
         mounted (){
 var self = this;
-    this.$axios
-.get('http://192.168.227.10:4000/api/data')
-.then(function(response){
-self.data = response.data.data;
-self.columns = response.data.columns;
+    this.$axios.get('http://192.168.227.10:4000/api/data').then(function(response){
+	self.data = response.data.data;
+	self.columns = response.data.columns;
 });
+this.$axios.get( '/apis/health/list',{params: obj})
+            .then(function(res){
+       // 成功回调
+            },function(){
+              alert("error")
+            })
 },
 
 };

@@ -14,8 +14,9 @@ var router = new Router({
   mode: 'history',
   routes: [
     {path: '/',redirect: '/index'},
-    { name: 'index', path: '/index', component: Index },
-    { name: 'teach', path: '/teach', component: Teach }
+    {name: 'index', path: '/index', component: Index },
+    {name: 'teach', path: '/teach', component: Teach },
+    {path: '*',redirect: '/'}
   ]
 })
 
