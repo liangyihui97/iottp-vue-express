@@ -28,55 +28,57 @@ Vue公司的物联网用户平台
 ##文件目录
 
 ```
-iottp-VUE快车
-├──.babelrc
-├──建造
-│├──build.js
-│├──check-versions.js
-│├──dev-client.js
-│├──utils.js
-│├──vue-loader.conf.js
-│├──webpack.base.conf.js
-│├──webpack.dev.conf.js
-│└──webpack.prod.conf.js
-├──配置
-│├──dev.env.js
-│├──index.js
-│└──prod.env.js
-├──dist
-│├──index.html
-│└──静电
-│├──cs
-│├──图像
-│├──img
-│├──js
-│└──Readme.md
-├──.eslintrc
-├──.gitignore
-├──index.js
-├──LICENSE
-├──nodemon.json
-├──package.json
-├──package-lock.json
-├──README.md
-└──src
-    ├──客户
-    │├──App.vue
-    │├──.App.vue.swp
-    │├──组件
-    │├──index.js
-    │├──路由器
-    │├──静电
-    │├──商店
-    │└──意见
-    └──服务器
-        ├──配置
-        ├──道
-        ├──index.js
-        ├──型号
-        ├──公众
-        ├──路由器
-        └──观点
+iottp-vue-express
+├── .babelrc
+├── build
+│   ├── build.js
+│   ├── check-versions.js
+│   ├── dev-client.js
+│   ├── utils.js
+│   ├── vue-loader.conf.js
+│   ├── webpack.base.conf.js
+│   ├── webpack.dev.conf.js
+│   └── webpack.prod.conf.js
+├── config
+│   ├── dev.env.js
+│   ├── index.js
+│   └── prod.env.js
+├── dist
+│   ├── index.html
+│   └── static
+│       ├── css
+│       ├── images
+│       ├── img
+│       ├── js
+│       └── Readme.md
+├── .eslintrc
+├── .gitignore
+├── index.js
+├── LICENSE
+├── nodemon.json
+├── package.json
+├── package-lock.json
+├── README.md
+└── src
+    ├── client
+    │   ├── App\ (another\ copy).vue
+    │   ├── App\ (copy).vue
+    │   ├── App.vue
+    │   ├── .App.vue.swp
+    │   ├── components
+    │   ├── index.js
+    │   ├── router
+    │   ├── static
+    │   ├── store
+    │   └── views
+    └── server
+        ├── config
+        ├── dao
+        ├── index.js
+        ├── model
+        ├── public
+        ├── router
+        └── views
 ```
 
 ##用法
