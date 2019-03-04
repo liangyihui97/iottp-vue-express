@@ -37,13 +37,6 @@
 
 	</div>
     </div>
- <div class="app full-height">
-    <h1>{{ message }}</h1>
-   {{data}}{{columns}}{{data2}}
-   
-
-<a href="http://192.168.227.10:4000/about.html">trun to about</a>
-  </div>
 </div>
 </template>
 
@@ -56,25 +49,9 @@ export default {
   data () {
     return {
       message: 'Express + Vue boilerplate-Konata9',
-      columns: [],
-      data: [],
-      data2: [],
     }
   },
-        mounted (){
-    var self = this;
-    this.$axios.get('http://192.168.227.10:4000/api/data').then(function(response){
-	self.data = response.data.data;
-	self.columns = response.data.columns;
-});
-this.$axios.get('/v2/music/search?q=周杰伦',).then(function (response) {
-        self.data2 = response.data.musics;
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
-},
-
+        
 };
 
 </script>
