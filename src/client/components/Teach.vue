@@ -2,14 +2,15 @@
 <div>
     <div id="teach">
         <div class="teach-nav">
-            <div class="nav-class">
-                <myNav v-model="content">
+                <my-nav v-model="content">
 
-                </myNav>
-            </div>
+                </my-nav>
         </div>
         <div class="teach-page">
-
+            <div class="teach-title">
+                <div class="teach-title-txt fl">实训1：门磁传感器ZigBee无线网络实训</div>
+                <div class="teach-user fr"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -39,7 +40,8 @@ components:{myNav},
                 },
                 {
                     content:'教学内容',
-                    img: require('../static/images/03nav.png')
+                    img: require('../static/images/03nav.png'),
+		    texts:['基础实训模块','智能家居实训模块','工业级实训模块']
                 }
                 ]
     }
