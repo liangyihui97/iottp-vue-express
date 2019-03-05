@@ -136,3 +136,16 @@ article img{width:100%}
 
 
 #footer{width: 100% ;height: 100px;background-color: #333}
+
+
+/*教学部分*/
+#teach{background: #2b333b;height: 1000px;width: 100%}
+.teach-nav{background-color: #2b333b;border-color: #2b333b;z-index: 2001;position: absolute;width: 220px;}
+.nav-header{height: 70px;width: 100%}
+.nav-header img{margin-left: 10px;}
+.nav-header div{color: #e7eaec; padding-top: 22px;padding-right: 45px;font-size: 18px}
+.nav{color: #a7b1c2;font-size: 17px;}
+.nav-content { height: 50px; padding: 14px 20px 14px 0px;cursor:pointer;line-height: 50px;text-align: left}
+.nav-content img{padding-left: 50px;padding-top: 14px}
+.nav-content:hover{background-color: #1A1E23;color: #ffffff;}
+.nav-text{margin-left: 10px;}
