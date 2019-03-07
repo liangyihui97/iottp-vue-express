@@ -2,12 +2,12 @@
 <div class="teach-data-axios" >
             <div class="teach-data-name fl">
                 <div class="teach-data-name-content " v-for="(itemname) in value[0].name">
-                    <div v-for="itemn in itemname">{{itemn}}</div>
+                    <div v-for="itemn in itemname"><div :class="right(itemd)">{{itemn}}</div></div>
                 </div>
             </div>
             <div class="teach-data-data fr">
                 <div class="teach-data-data-content" v-for="(itemdata) in value[0].data">
-                    <div v-for="itemd in itemdata">{{itemd}}</div>
+                    <div v-for="itemd in itemdata"><div :class="right(itemd)">{{itemd}}</div></div>
                 </div>
             </div>
         </div>
@@ -15,7 +15,13 @@
 
 <script>
 export default{
- props:['value']
+ props:['value'],
+ methods:{
+            right: function (itemd) {
+                if(itemd==='正常'||itemd==='已连接'){return 'right'}
+                else if(itemd==='关闭'||itemd==='未连接'){return 'error'}
+            }
+        }
 
 }
 </script>
