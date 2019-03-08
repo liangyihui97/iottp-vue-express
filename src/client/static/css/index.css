@@ -2,18 +2,23 @@ body{background: white;color: #001327;
     font: 14px/1.5 "PingFang SC", "微软雅黑", "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;}
 .logo-a{color: #001327;cursor:pointer;}
 .logo-a:hover{color: #001327}
+.logo-a img{margin-top: 10px;}
 #header{height:90px;background: #bee2ff; box-shadow:0px 5px 10px #ababab;}
-#header_top{height: 90px;width: 1400px; margin-left: 100px;}
-#logo{margin-top: -5px;margin-left: 50px;width: 250px;}
+#header_top{height: 90px;width: 1400px; margin-left: 0px;}
+#logo{margin-top: -5px;margin-left:10px;width: 230px;}
 .logo-font{margin-top: 31px;position: relative}
 .logo-font-strong{font-size: 17px}
-#nav a{cursor:pointer;padding:0 30px;display: inline-block;font-size: 16px}
+#nav{margin-left: 100px;}
+#nav a{cursor:pointer;padding:0 30px;display: inline-block;font-size: 16px;}
+#nav a:hover{text-decoration: none;color: #424242
+}
 .menu ul{line-height: 90px;float:left;}
 .menu li{float:left;}
+.menu li:hover{background-color: #ceeaff;transition: all 350ms;}
 .header_second_nav{height: 35px;background-color: #ffffff;}
 .search_btn{cursor: pointer;width:50px;height: 39px;/*35+4*/background: linear-gradient(to right, #3e3e3e,#001327);color:#fff;border-top-right-radius:20px;border-bottom-right-radius:20px;}
 .search_text{width:100px;height:25px;padding-top:5px;padding-bottom:5px;padding-left:10px;background:#fff;border-top-left-radius:20px;border-bottom-left-radius:20px;border: 2px solid #3E3E3E;}
-.header_second_search{width: 164px;height: 35px; margin-top: 28px;margin-left: 60px;position: relative;}/*before之前要relative*/
+.header_second_search{width: 164px;height: 35px; margin-top: 28px;position: absolute;left:1100px}/*before之前要relative*/
 .header_second_search:before{position: absolute;background: url("../images/serach.png") no-repeat center /32px 32px; ;
     content: '';
     top: 6px;
@@ -22,7 +27,7 @@ body{background: white;color: #001327;
     width: 28px;
     height: 28px;
     cursor: pointer;}
-#login{line-height: 90px;margin-right: 60px}
+#login{line-height: 90px;}
 
 /*滑动*/
 .body{width: 100%;height: 2000px;background-color: #f5f5f6; margin-top: 9px}
@@ -42,6 +47,7 @@ body{background: white;color: #001327;
     justify-content: center;
     flex-direction: column;
 }/*多行文字居中*/
+.banner-content li:hover{background-color: #353F49;}
 .banner-content a{color: rgba(255, 255, 255, 0.8);}
 .banner-content a:hover{color: #22a0ff}
 
@@ -138,10 +144,10 @@ article img{width:100%}
 #footer{width: 100% ;height: 100px;background-color: #333}
 
 /*教学部分*/
-#teach{background: #2b333b;height: 1000px;min-width: 1300px;position: absolute}
+#teach{background: #2b333b;height: 1000px;min-width: 1300px;position: absolute;}
 .teach-nav{height:500px;background-color: #2b333b;border-color: #2b333b;z-index: 2001;position: absolute;width: 220px;}
 .nav{height:500px;color: #a7b1c2;font-size: 17px; user-select:none;}
-.nav-content {box-sizing: border-box;display:block;height: 50px;line-height: 50px;;position:relative;text-align:left;width: 230px;}
+.nav-content {box-sizing: border-box;display:block;height: 50px;line-height: 50px;position:relative;text-align:left;width: 230px;}
 
 .nav-content ul{height: auto !important;}
 .nav-content img{padding-left: 35px;padding-top: 14px}
@@ -149,8 +155,10 @@ article img{width:100%}
 .nav-text{margin-left: 10px;}
 .nav-active{border-left: 4px solid #22a0ff;display: block;background-color: #1A1E23;color: #ffffff;}
 .nav-text-sub{position: relative;visibility: visible;height: auto !important;display: block;padding-left:80px;}
-.nav-text-sub a{color: #a7b1c2;}
+.nav-a-active{color: #ffffff;}
 .nav-text-sub a:hover{color: #ffffff;}
+
+
 
 
 .teach-page{background-color: rgb(243, 243, 244);margin-left:230px;min-height: 1000px;min-width:1300px;position: absolute;}
