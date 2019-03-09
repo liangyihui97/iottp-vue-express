@@ -34,8 +34,22 @@
         
 	
         <div id="footer">
-
-	</div>
+        <div class="footer-logo fl ">
+            <a class="footer-logo-a" title="物联网教学">
+                <img  class="fl" src="./static/images/logo.png" width="80" height="80">
+                <div class="fl logo-font">
+                    <span class="logo-font-strong"><strong>物联网教学</strong></span><br/>
+                    <span style="font-size: 10px">IoT Teaching Platform</span>
+                </div>
+            </a>
+        </div>
+        <div class="introduce">
+            梁艺晖的毕业设计，基于Vue.js的物联网用户平台前端页面开发，使用技术有Vue.js、Express...
+        </div>
+        <div class="copyright">
+            <a>Copyright © 2018 - 2019 lyh-GDUT.</a>
+        </div>
+    </div>
     </div>
 </div>
 </template>

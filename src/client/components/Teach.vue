@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="main">
 <div style="height: 500px;" id="canvas"></div>
 <qunee-js src="./js/qunee.js">
 </qunee-js>

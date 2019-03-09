@@ -2,16 +2,15 @@ body{background: white;color: #001327;
     font: 14px/1.5 "PingFang SC", "微软雅黑", "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;}
 .logo-a{color: #001327;cursor:pointer;}
 .logo-a:hover{color: #001327}
-.logo-a img{margin-top: 10px;}
+.logo-a img{margin-top: 5px;}
 #header{height:90px;background: #bee2ff; box-shadow:0px 5px 10px #ababab;}
 #header_top{height: 90px;width: 1400px; margin-left: 0px;}
-#logo{margin-top: -5px;margin-left:10px;width: 230px;}
-.logo-font{margin-top: 31px;position: relative}
+.logo{margin-top: -5px;margin-left:10px;width: 230px;}
+.logo-font{margin-top: 26px;position: relative}
 .logo-font-strong{font-size: 17px}
 #nav{margin-left: 100px;}
 #nav a{cursor:pointer;padding:0 30px;display: inline-block;font-size: 16px;}
-#nav a:hover{text-decoration: none;color: #424242
-}
+#nav a:hover{text-decoration: none;color: #424242;box-shadow:1px 0px 5px  #ababab}
 .menu ul{line-height: 90px;float:left;}
 .menu li{float:left;}
 .menu li:hover{background-color: #ceeaff;transition: all 350ms;}
@@ -141,10 +140,10 @@ article img{width:100%}
 .data{border-bottom: 1px solid #e6e6e6; margin-bottom: 10px;margin-left: 20px;padding-bottom: 5px}
 
 
-#footer{width: 100% ;height: 100px;background-color: #333}
 
 /*教学部分*/
-#teach{background: #2b333b;height: 1000px;min-width: 1300px;position: absolute;}
+.main{height: 700px}
+#teach{background: #2b333b;height: 900px;min-width: 1300px;position: absolute;}
 .teach-nav{height:500px;background-color: #2b333b;border-color: #2b333b;z-index: 2001;position: absolute;width: 220px;}
 .nav{height:500px;color: #a7b1c2;font-size: 17px; user-select:none;}
 .nav-content {box-sizing: border-box;display:block;height: 50px;line-height: 50px;position:relative;text-align:left;width: 230px;}
@@ -161,7 +160,7 @@ article img{width:100%}
 
 
 
-.teach-page{background-color: rgb(243, 243, 244);margin-left:230px;min-height: 1000px;min-width:1300px;position: absolute;}
+.teach-page{background-color: rgb(243, 243, 244);margin-left:230px;min-height: 900px;min-width:1300px;position: absolute;}
 .teach-title{width:1290px;height: 50px;background-color: #fff;color: rgb(136, 136, 136); font-size: 18px;line-height:50px;position: absolute;left: 5px;}
 .teach-select{position: absolute;left: 10px;top:7px;cursor:pointer;width:100px;height: 40px;}
 .teach-select-text{font-size: 15px;color: #22a0ff;line-height: 40px;}
@@ -202,3 +201,13 @@ article img{width:100%}
 .teach-data-data-content{margin-top: 10px}
 .right{color: #4CAF50;font-weight:bold;}
 .error{color: #D32F2F;font-weight:bold;}
+
+#footer{width: 100% ;height: 200px;background-color: #333; position: absolute;}
+.footer-logo{margin-top: 15px;margin-left:100px;width: 230px;}
+.footer-logo-font{margin-top: 31px;position: relative}
+.footer-logo-font-strong{font-size: 17px}
+.footer-logo-a{color: #acacac;cursor:pointer;}
+.footer-logo-a:hover{color: #acacac;}
+.footer-logo-a img{margin-top: 10px;}
+.introduce{color:#acacac;width:500px;position: absolute;top:110px;left: 111px}
+.copyright a{position: absolute;left:650px;bottom: 5px;color: #999;cursor: pointer}
