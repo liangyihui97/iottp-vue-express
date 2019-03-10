@@ -21,41 +21,41 @@
                         <input class="slider" type='radio' name='slider' id='slide4'/>
                         <input class="slider" type='radio' name='slider' id='slide5'/>
                         <div id="slides">
-                            <div id="container">
-                                <div class="inner">
-                                    <article>
-                                        <div class='caption'>
-                                            <bar>三部门发布加强绿色数据中心建设指导意见<a href="#">详情</a></bar>
-                                        </div>
-                                        <img src="../static/images/iot01.jpg" width="942" height="405">
-                                    </article>
-                                    <article>
-                                        <div class='caption'>
-                                            <bar>智慧医疗满意度先行 三级公立医院将全部纳入满意度调查平台<a href="#">详情</a></bar>
-                                        </div>
-                                        <img src="../static/images/iot02.jpg" width="942" height="405">
-                                    </article>
-                                    <article>
-                                        <div class='caption'>
-                                            <bar>智能家电、信息消费成主力 10部门联合印发《实施方案》推动消费增长<a href="#">详情</a></bar>
-                                        </div>
-                                        <img src="../static/images/iot03.jpg" width="942" height="405">
-                                    </article>
-                                    <article>
-                                        <div class='caption'>
-                                            <bar>工信部公示2018年工业互联网APP优秀解决方案 89家企业入选<a href="#">详情</a></bar>
-                                        </div>
-                                        <img src="../static/images/iot04.jpg" width="942" height="405">
-                                    </article>
-                                    <article>
-                                        <div class='caption'>
-                                            <bar>三部门发布加强绿色数据中心建设指导意见<a href="#">详情</a></bar>
-                                        </div>
-                                        <img src="../static/images/iot05.jpg" width="942" height="400">
-                                    </article>
+                    <div id="container">
+                        <div class="inner">
+                            <article>
+                                <div class='caption'>
+                                    <div>三部门发布加强绿色数据中心建设指导意见<a href="#">详情</a></div>
                                 </div>
-                            </div>
+                                <img src="../static/images/iot01.jpg" width="942" height="405">
+                            </article>
+                            <article>
+                                <div class='caption'>
+                                    <div>智慧医疗满意度先行 三级公立医院将全部纳入满意度调查平台<a href="#">详情</a></div>
+                                </div>
+                                <img src="../static/images/iot02.jpg" width="942" height="405">
+                            </article>
+                            <article>
+                                <div class='caption'>
+                                    <div>智能家电、信息消费成主力 10部门联合印发《实施方案》推动消费增长<a href="#">详情</a></div>
+                                </div>
+                                <img src="../static/images/iot03.jpg" width="942" height="405">
+                            </article>
+                            <article>
+                                <div class='caption'>
+                                    <div>工信部公示2018年工业互联网APP优秀解决方案 89家企业入选<a href="#">详情</a></div>
+                                </div>
+                                <img src="../static/images/iot04.jpg" width="942" height="405">
+                            </article>
+                            <article>
+                                <div class='caption'>
+                                    <div>三部门发布加强绿色数据中心建设指导意见<a href="#">详情</a></div>
+                                </div>
+                                <img src="../static/images/iot05.jpg" width="942" height="400">
+                            </article>
                         </div>
+                    </div>
+                </div>
                         <div id="commands">
                             <label for='slide1'></label>
                             <label for='slide2'></label>
@@ -79,7 +79,7 @@
                         <img class="img-l fl" src="../static/images/video.png" width="40" height="40">
                         <strong class="fl">教学视频</strong>
                     </div>
-                    <div id="app" v-cloak>
+                    <div id="appNav" v-cloak>
                         <tabs v-model="activeKey">
                             <pane label="全部视频" name="1">
                                 <div>
@@ -344,10 +344,12 @@
 </template>
 
 <script>
+//视频栏选择组件
 import pane from './pane'
 import tabs from './tabs'
-    export default {
-components:{pane,tabs},
+
+export default {
+	components:{pane,tabs},
         data () {
             return {
                 // note: changing this line won't causes changes
@@ -376,6 +378,7 @@ components:{pane,tabs},
                     }
                 ]
             }
-        }
+        },
+
     }
 </script>

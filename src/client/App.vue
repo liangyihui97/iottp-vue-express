@@ -1,5 +1,4 @@
 <template>
-<div>
     <div id="index">
         <div id="header" v-if="$route.name=='index'">
         <div id="header_top">
@@ -51,7 +50,6 @@
         </div>
     </div>
     </div>
-</div>
 </template>
 
 <script>
