@@ -5,11 +5,20 @@
 </qunee-js>
 <div id="teach" v-cloak>
                 <div class="teach-nav">
-                    <my-nav v-model="content">
+                    <div class="teach-logo fl" @click="goIndex">
+                        <div class="teach-logo-a" title="物联网教学" >
+                            <img  class="fl" src="../static/images/logo.png" width="80" height="80">
+                            <div class="fl teach-logo-font">
+                                <span class="teach-logo-font-strong"><strong>物联网教学</strong></span><br/>
+                                <span style="font-size: 10px">IoT Teaching Platform</span>
+                            </div>
+                        </div>
+                    </div>
+                    <my-nav v-model="content" class="fl">
 
                     </my-nav>
                 </div>
-                <div class="teach-page">
+		<div class="teach-page">
                     <div class="teach-title ">
                         <div class="teach-select " v-clickoutside="handleClose"@mouseover="show=true">
                             <img src="../static/images/select.png" width="34" height="34" alt="选择课程" title="选择课程">
@@ -166,7 +175,10 @@ components:{
     methods:{
         handleClose: function () {
                 this.show = false;
-            }
+            },
+    	goIndex: function(){
+		this.$router.replace({name: 'index'});
+	    }
     }
 }
 </script>

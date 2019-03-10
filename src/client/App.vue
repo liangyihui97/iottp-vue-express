@@ -1,7 +1,7 @@
 <template>
 <div>
     <div id="index">
-        <div id="header" >
+        <div id="header" v-if="$route.name=='index'">
         <div id="header_top">
         <div id="logo" class="fl">
             <a class="logo-a" title="物联网教学">
@@ -26,14 +26,14 @@
             <input type="submit" value="" class="search_btn fr">
         </div>
             <div id="login" class="fr">
-                <a href="#">登 录</a>  /  <a href="#">注 册</a>
+                <router-link :to="{ name: 'login' }">登录</router-link>  /  <a href="#">注 册</a>
             </div>
         </div>
     </div>
    <router-view></router-view>
         
 	
-        <div id="footer">
+        <div id="footer" v-if="$route.name=='index'">
         <div class="footer-logo fl ">
             <a class="footer-logo-a" title="物联网教学">
                 <img  class="fl" src="./static/images/logo.png" width="80" height="80">
