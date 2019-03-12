@@ -1,7 +1,7 @@
 <template>
-<div class="main">
+<div class="login-main">
 <el-row type="flex" justify="center">
-  <el-col :span="6">
+  <el-col :span="6"style="height:330px;width:380px;margin-right:10px;">
 	<h3 class="font-bold">欢迎来到物联网用户平台</h3>
                 <p>物联网专业是一个涉及计算机科学与技术、软件工程、通信工程、电子工程、网络工程等多专业学科的交叉专业，毕业学生从事多领域的工作，其配套实验室建设直接关系到学生的培养。</p>
                 <p>这是我的一个毕设项目，在这里你可以学习有关物联网设备的使用方法，包括：组装、链接、维护和数据的获取。</p>
@@ -17,7 +17,7 @@
                         <span class="fl" style="font-size: 24px;margin-left: 20px;margin-top:11px;">登录</span>
                     </div>
                     <div class="login-submit">
-                        <el-form  :model="user" :rules="rules" status-icon label-width="80px">
+        <el-form  :model="user" :rules="rules" status-icon label-width="80px">
             <el-form-item label="用户名" prop="name">
                 <el-input v-model="user.name"></el-input>
             </el-form-item>
@@ -33,6 +33,7 @@
 </el-col>
 </el-row>
 </div>
+
 </template>
 
 <script>
@@ -62,14 +63,14 @@
 <style >
 body{background: #f3f3f4;height: 100%;font-family: "open sans", "Helvetica Neue", 微软雅黑, Helvetica, Arial, sans-serif;color:rgb(103, 106, 108);
 }
-.main{margin-top: 100px;}
-.main p{font-size: 13px;}
-.el-col{margin-right:10px}
+.login-main{margin-top: 100px;}
+.login-main p{font-size: 13px;}
+.el-col{}
 .font-bold{font-weight:600 ;font-size: 24px;}
 .login{background-color: #fff;padding:10px 10px;margin-top:25px;margin-left:10px;border-radius : 10px;}
 .el-form-el-form-item{padding-left:125px;}
 .el-form-item__content buttom{margin-left:125px;}
-.login{height:260px;}
+.login{height:260px;width:350px;}
 .login-logo{position: absolute;}
 .login-submit{position: absolute;top:115px;}
 </style>

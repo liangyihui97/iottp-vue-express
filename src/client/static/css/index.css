@@ -187,7 +187,7 @@ article img{width:100%}
 .teach-console{position:absolute;width:800px;height:500px;background-color: #fff; top:55px;left: 5px;}
 .teach-console-title{width:70px;height: 20px;margin:3px 10px 0px 11px;color: rgb(127, 127, 127); font-size:16px;}
 
-#canvas{position: absolute;outline: none;width: 800px;z-index: 1;display:block;left: 235px;top:175px}
+#canvas{position: absolute;outline: none;width: 800px;z-index: 1;display:block;left: 235px;top:100px}
 
 .teach-console-test{position: absolute;bottom: 50px;right: 20px;color:rgb(127, 127, 127);z-index: 2;border: rgb(127, 127, 127) solid 1px;border-radius: 5px;padding: 2px 4px 2px 4px;}
 .teach-console img{padding-left: 5px }
