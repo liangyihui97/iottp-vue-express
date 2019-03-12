@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="teach-console-test">
-                            <a href="#">连线完成，点击测试</a><img class="fr" src="../static/images/test.png" width="20px" height="auto">
+                            <a href="#" @click="getData">连线完成，点击测试</a><img class="fr" src="../static/images/test.png" width="20px" height="auto">
                         </div>
                         <div class="teach-console-submit">
                             <a href="#">测试完成，提交结果</a><img class="fr" src="../static/images/submit.png" width="20px" height="auto">
@@ -107,7 +107,7 @@ components:{
                     img: require('../static/images/01nav.png')
                 },
                 {
-                    content:'财产管理',
+                    content:'设备管理',
                     img: require('../static/images/02nav.png')
                 },
                 {
@@ -117,27 +117,12 @@ components:{
                 }
                 ],
       show: false,
-      apiData:[
-                {
-                    'name':[
-                        ['电源状态', '连接状态', '开关状态', '开合次数', '工作时间'],
-                        ['电源状态', '连接状态','设备连接数量','上行速率','下行速率']
-                    ],
-                    'data': [
-                        ['正常','已连接','闭合','0','1h'],
-                        ['关闭','未连接','1','20k/s','100k/s'],
-                        []
-                    ]
-                }
-            ]
+      apiData:[{'img':[],'name':[],'data':[]}]
     }
   },
     mounted (){
-    var self = this;
-    this.$axios.get('http://192.168.227.10:4000/api/data').then(function(response){
-	self.data = response.data.data;
-	self.columns = response.data.columns;
-});
+
+
 //this.$axios.get('/v2/music/search?q=周杰伦',).then(function (response) {
 //        self.data2 = response.data.musics;
 //    })
@@ -178,7 +163,16 @@ components:{
             },
     	goIndex: function(){
 		this.$router.replace({name: 'index'});
-	    }
-    }
+	    },
+getData:function(){
+	var self = this;
+    this.$axios.get('http://192.168.227.10:4000/api/data1').then(function(response){
+	self.data = response.data.data;
+	self.columns = response.data.columns;
+	self.apiData = response.data.apiData;
+});
+    },
+	
+}
 }
 </script>

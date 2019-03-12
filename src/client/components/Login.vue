@@ -17,7 +17,7 @@
                         <span class="fl" style="font-size: 24px;margin-left: 20px;margin-top:11px;">登录</span>
                     </div>
                     <div class="login-submit">
-        <el-form  :model="user" :rules="rules" status-icon label-width="80px">
+        <el-form  ref="loginForm" :model="user" :rules="rules" status-icon label-width="80px">
             <el-form-item label="用户名" prop="name">
                 <el-input v-model="user.name"></el-input>
             </el-form-item>
@@ -38,11 +38,34 @@
 
 <script>
     export default {
-        methods: {
-            login () {
-                this.$router.replace('/')
+       methods: {
+    login() {
+        this.$refs.loginForm.validate((valid) =>{
+            if (valid) {
+                if (this.user.name === 'admin' && this.user.pass === '123') {
+                    // dispatch采用Promise链式调用    
+			console.log('right');                     
+                    this.$store.dispatch('login', this.user).then(() =>{
+                        this.$notify({
+                            type: 'success',
+                            message: '欢迎你,' + this.user.name + '!',
+                            duration: 3000
+                        })
+                        this.$router.replace('/')
+                    })
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '用户名或密码错误',
+                        showClose: true
+                    })
+                }
+            } else {
+                return false
             }
-        },
+        })
+    }
+},
         data () {
             return {
                 user: {},

@@ -45,8 +45,20 @@ app.get('/', function (req, res) {
 app.get('/login', function (req, res) {
   res.sendFile('./views/login.html')
 })
-app.get('/api/data',function(req,res){
- res.json({
+app.get('/api/data1',function(req,res){
+ res.json({apiData:[
+                {   'img': ["images/node1.png","images/node2.png"],
+                    'name':[
+                        ['设备','电源状态', '连接状态', '开关状态', '开合次数', '工作时间'],
+                        ['设备','电源状态', '连接状态','设备连接数量','上行速率','下行速率']
+                    ],
+                    'data': [
+                        ['HS1DS-E','正常','已连接','闭合','0','1h'],
+                        ['HS2GW-E','关闭','未连接','1','20k/s','100k/s'],
+                        []
+                    ]
+                }
+            ],
             columns: [
                 {
                     title: '姓名',

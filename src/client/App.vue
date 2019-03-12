@@ -25,7 +25,10 @@
             <input type="submit" value="" class="search_btn fr">
         </div>
             <div id="login" class="fr">
-                <router-link :to="{ name: 'login' }">登录</router-link>  /  <a href="#">注 册</a>
+                <span v-if="user"> <div class="uesrname fl">{{user.name+' '}}</div>
+            <el-button  type="warning" plain @click="login">注销</el-button>
+        </span>
+        <el-button v-else type="primary" @click="login" >点击登录</el-button>
             </div>
         </div>
     </div>
@@ -57,8 +60,22 @@
 
 
 export default {
-
-  data () {
+    methods: {
+    login() {
+        this.$router.replace('/login')
+    },
+    logout() {
+        this.$store.dispatch('logout').then(() =>{
+            this.$router.replace('/login')
+        })
+    }
+},
+    computed: {
+    user() {
+        return this.$store.state.user
+    }
+},
+    data () {
     return {
       message: 'Express + Vue boilerplate-Konata9',
     }
