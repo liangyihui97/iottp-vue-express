@@ -5,7 +5,7 @@
 	    </div>
             <div class="teach-data-name fl">
                 <div class="teach-data-name-content " v-for="(itemname) in value[0].name">
-                    <div v-for="itemn in itemname"><div :class="right(itemn)">{{itemn}}</div></div>
+                    <div v-for="(itemn,key) in itemname"><div :class="right(itemn)">{{itemn}}</div></div>
                 </div>
             </div>
             <div class="teach-data-data fl">

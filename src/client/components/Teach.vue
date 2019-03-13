@@ -121,6 +121,15 @@ components:{
     }
   },
     mounted (){
+setInterval(() =>{
+var self = this;
+    this.$axios.get('http://192.168.227.10:4000/api/data').then(function(response){
+	self.data = response.data
+}).catch(function(error){
+console.log(error);
+});
+},2000)
+
 
 
 //this.$axios.get('/v2/music/search?q=周杰伦',).then(function (response) {
@@ -165,12 +174,13 @@ components:{
 		this.$router.replace({name: 'index'});
 	    },
 getData:function(){
+setInterval(() =>{
 	var self = this;
     this.$axios.get('http://192.168.227.10:4000/api/data1').then(function(response){
 	self.data = response.data.data;
 	self.columns = response.data.columns;
 	self.apiData = response.data.apiData;
-});
+});},2000)
     },
 	
 }

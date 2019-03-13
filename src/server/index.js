@@ -4,6 +4,7 @@ import favicon from 'serve-favicon'
 import logger from 'morgan'
 import bodyParser from 'body-parser'
 import webpack from 'webpack'
+import Mock from 'mockjs'
 //import fs from 'fs'
 //import http from 'http'
 import proxy from 'http-proxy-middleware'// 代理插件
@@ -46,16 +47,16 @@ app.get('/login', function (req, res) {
   res.sendFile('./views/login.html')
 })
 app.get('/api/data1',function(req,res){
- res.json({apiData:[
+ res.json(Mock.mock({apiData:[
                 {   'img': ["images/node1.png","images/node2.png"],
                     'name':[
                         ['设备','电源状态', '连接状态', '开关状态', '开合次数', '工作时间'],
                         ['设备','电源状态', '连接状态','设备连接数量','上行速率','下行速率']
                     ],
                     'data': [
-                        ['HS1DS-E','正常','已连接','闭合','0','1h'],
-                        ['HS2GW-E','关闭','未连接','1','20k/s','100k/s'],
-                        []
+                        {'nodename':'HS1DS-E','status':'正常','line':'已连接','switch':'闭合',"openclose":1,'worktime':'2h'},
+                        {'nodename':'HS2GW-E','status':'关闭','line':'未连接','num':'1','Upstream|20-50': 1,'Downtream|50-100': 1},
+                        
                     ]
                 }
             ],
@@ -93,7 +94,17 @@ app.get('/api/data1',function(req,res){
                     address: '广东省云浮市'
                 },
             ]
-        })
+        }));
+})
+app.get('/api/data',function(req,res){
+ res.json(Mock.mock({
+        "status": 200,
+        "data|1-9": [{
+            "name|5-8": /[a-zA-Z]/,
+            "id|+1": 1,
+            "value|0-500": 20
+        }]
+    }));
 })
 app.use('/v2', proxy({
     target: 'https://api.douban.com',
