@@ -4,6 +4,7 @@ import favicon from 'serve-favicon'
 import logger from 'morgan'
 import bodyParser from 'body-parser'
 import webpack from 'webpack'
+//Mock.js生成随机数据
 import Mock from 'mockjs'
 //import fs from 'fs'
 //import http from 'http'
@@ -51,7 +52,7 @@ app.get('/api/data1',function(req,res){
                 {   'img': ["images/node1.png","images/node2.png"],
                     'name':[
                         ['设备','电源状态', '连接状态', '开关状态', '开合次数', '工作时间'],
-                        ['设备','电源状态', '连接状态','设备连接数量','上行速率','下行速率']
+                        ['设备','电源状态', '连接状态','设备连接数量','上行速率(Kb/s)','下行速率(Kb/s)']
                     ],
                     'data': [
                         {'nodename':'HS1DS-E','status':'正常','line':'已连接','switch':'闭合',"openclose":1,'worktime':'2h'},

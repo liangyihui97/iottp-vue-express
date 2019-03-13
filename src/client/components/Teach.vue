@@ -70,6 +70,13 @@
                         <my-data v-model="apiData">
                         </my-data>
                     </div>
+                    <div class="teach-chart">
+                        <div class="teach-chart-title">
+                            可视化
+                        </div>
+                        <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+                    </div>
+		    
                 </div>
             </div>
 </div>
@@ -128,9 +135,9 @@ var self = this;
 }).catch(function(error){
 console.log(error);
 });
-},2000)
+},200000)
 
-
+this.drawLine();
 
 //this.$axios.get('/v2/music/search?q=周杰伦',).then(function (response) {
 //        self.data2 = response.data.musics;
@@ -180,8 +187,26 @@ setInterval(() =>{
 	self.data = response.data.data;
 	self.columns = response.data.columns;
 	self.apiData = response.data.apiData;
-});},2000)
+});},4000)
     },
+drawLine(){
+        // 基于准备好的dom，初始化echarts实例
+        let myChart = this.$echarts.init(document.getElementById('myChart'))
+        // 绘制图表
+        myChart.setOption({
+            title: { text: '在Vue中使用echarts' },
+            tooltip: {},
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        });
+    }
 	
 }
 }
