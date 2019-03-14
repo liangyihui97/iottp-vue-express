@@ -20,7 +20,7 @@
     </div> 
     <div class="teach-page"> 
      <div class="title "> 
-      <div class="teach-select " v-clickoutside="handleClose" @mouseover="show=true"> 
+      <div class="teach-select fl" v-clickoutside="handleClose" @mouseover="show=true"> 
        <img src="../static/images/select.png" width="34" height="34" alt="选择课程" title="选择课程" /> 
        <div class="teach-select-text fr">
         选择课程
@@ -42,10 +42,17 @@
         <p><a href="#">实训14</a></p> 
        </div> 
       </div> 
-      <div class="teach-title-txt ">
+      <div class="teach-title-txt fl">
        <strong>实训1：门磁传感器ZigBee无线网络实训</strong>
       </div> 
-      <div class="teach-user fr"></div> 
+      <div class="teach-user fr">
+<div class="teach-login fr" >
+                <span v-if="user"> <div class="uesrname fl">{{user.name+' '}}</div>
+            <el-button  type="warning" plain @click="login">注销</el-button>
+        </span>
+        <el-button v-else type="primary" @click="login" >点击登录</el-button>
+            </div>
+</div> 
      </div> 
      <div class="teach-console"> 
       <div class="teach-title">
@@ -260,6 +267,14 @@ this.drawLine();
 	} 
    },
     methods:{
+login() {
+        this.$router.push('/login')
+    },
+    logout() {
+        this.$store.dispatch('logout').then(() =>{
+            this.$router.push('/login')
+        })
+    },
         handleClose: function () {
                 this.show = false;
             },
@@ -310,6 +325,11 @@ var myChart2 = this.$echarts.init(document.getElementById('myChart2'),'light');
     });
     }
 	
-}
+},
+computed: {
+    user() {
+        return this.$store.state.user
+    }
+},
 }
 </script>

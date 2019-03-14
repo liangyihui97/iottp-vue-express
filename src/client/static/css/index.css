@@ -167,13 +167,13 @@ article img{width:100%}
 
 
 
-
+.teach-login{line-height:50px;width:150px;margin-right:20px;}
 .teach-page{background-color: rgb(243, 243, 244);margin-left:230px;min-height: 100%;min-width:1300px;position: absolute;}
 .title{width:1290px;height: 50px;background-color: #fff;color: rgb(136, 136, 136); font-size: 18px;line-height:50px;position: absolute;left: 5px;}
 .mychart {margin-left: 50px;}
 .teach-select{position: absolute;left: 10px;top:7px;cursor:pointer;width:100px;height: 40px;}
 .teach-select-text{font-size: 15px;color: #22a0ff;line-height: 40px;}
-.teach-title-txt{width:400px;margin:0 auto;}
+.teach-title-txt{width:370px;margin-left:400px;}
 .teach-user{width:100px;}
 
 /*选集*/

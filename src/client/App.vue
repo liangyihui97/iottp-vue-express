@@ -62,11 +62,11 @@
 export default {
     methods: {
     login() {
-        this.$router.replace('/login')
+        this.$router.push('/login')
     },
     logout() {
         this.$store.dispatch('logout').then(() =>{
-            this.$router.replace('/login')
+            this.$router.push('/login')
         })
     }
 },
