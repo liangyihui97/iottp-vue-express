@@ -19,7 +19,7 @@
                     </my-nav>
                 </div>
 		<div class="teach-page">
-                    <div class="teach-title ">
+                    <div class="title ">
                         <div class="teach-select " v-clickoutside="handleClose"@mouseover="show=true">
                             <img src="../static/images/select.png" width="34" height="34" alt="选择课程" title="选择课程">
                             <div class="teach-select-text fr">选择课程</div>
@@ -44,7 +44,7 @@
                         <div class="teach-user fr"></div>
                     </div>
                     <div class="teach-console">
-                        <div class="teach-console-title">
+                        <div class="teach-title">
                             拓扑界面
                         </div>
 
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="teach-structure">
-                        <div class="teach-structure-title">
+                        <div class="teach-title">
                             网络结构
                         </div>
                         <div class="teach-structure-network">
@@ -64,19 +64,39 @@
                         </div>
                     </div>
                     <div class="teach-data">
-                        <div class="teach-data-title">
+                        <div class="teach-title">
                             设备检测
                         </div>
                         <my-data v-model="apiData">
                         </my-data>
                     </div>
                     <div class="teach-chart">
-                        <div class="teach-chart-title">
+                        <div class="teach-title">
                             可视化
                         </div>
-                        <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+                        <div class="mychart fl" id="myChart" :style="{width: '550px', height: '300px'}"></div>
+			<div class="mychart fl" id="myChart2" :style="{width: '550px', height: '300px'}"></div>
                     </div>
-		    
+		    <div class="teach-info">
+		        <div class="teach-title">
+                            产品说明
+                        </div>
+			<div>
+				
+产品型号	
+HS1GW智能网关
+
+工作电压	AC100V~240V
+平均功耗	≤0.5W
+报警电流	≤30mA
+联网方式	ZigBee自组网
+无线组网距离 	≤100米(空旷环境)
+工作温度	-10℃~+50℃
+环境湿度	最大95%RH
+A 外形尺寸	122*122*52mm
+B 产品尺寸	70*70*53mm
+			</div>
+		    </div>
                 </div>
             </div>
 </div>
@@ -191,21 +211,37 @@ setInterval(() =>{
     },
 drawLine(){
         // 基于准备好的dom，初始化echarts实例
-        let myChart = this.$echarts.init(document.getElementById('myChart'))
+        let myChart = this.$echarts.init(document.getElementById('myChart'),'light')
         // 绘制图表
         myChart.setOption({
-            title: { text: '在Vue中使用echarts' },
+            title: { text: 'HS1DS-E信息图表' ,textstyle:{color:'#888888',},left:'center' },
             tooltip: {},
             xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                data: ["开合次数","工作时间(h)","数量","上行(Kb/s)","下行(Kb/s)"]
             },
             yAxis: {},
             series: [{
-                name: '销量',
+                name: '参数',
                 type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
+                data: [5, 20, 2, 10, 20]
             }]
         });
+var myChart2 = this.$echarts.init(document.getElementById('myChart2'),'light');
+        myChart2.setOption({title: { text: '历史平均速率(kb/s)' ,textstyle:{color:'#888888',},left:'center' },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: [19, 12, 20, 15, 18, 15, 19],
+            type: 'line',
+            areaStyle: {}
+        }]
+    });
     }
 	
 }
