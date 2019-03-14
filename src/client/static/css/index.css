@@ -142,7 +142,7 @@ article img{width:100%}
 
 
 /*教学部分*/
-#teach{background: #2b333b;height: 1363px;min-width: 1300px;position: absolute;}
+#teach{background: #2b333b;height: 1500px;min-width: 1300px;position: absolute;}
 
 .teach-logo-a{color: #a7b1c2;cursor:pointer;}
 .teach-logo-a:hover{color: #fff}
@@ -211,10 +211,40 @@ article img{width:100%}
 .error{color: #D32F2F;font-weight:bold;}
 /*可视化*/
 .teach-chart{position:absolute;width:100%;height:400px;background-color: #fff; top:560px;left: 5px;}
-.teach-info{position:absolute;width:100%;height:400px;background-color: #fff; top:965px;left: 5px;}
+
 
 /*产品说明*/
+.teach-info{position:absolute;width:100%;height:530px;background-color: #fff; top:965px;left: 5px;}
+.teach-info-content{margin:20px 50px 0 10px;}
+table, td, th {
+	margin-bottom:10px;
+	border: 2px solid #80c7ff;
+	background-color: #bee2ff;
+	color: rgb(98, 98, 98);
+	font-size: 16px;
+	width: 1000px;
+}
 
+table {
+	font-family: verdana,arial,sans-serif;
+	font-size: 11px;
+	color: #333333;
+	border-color: #229eff;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table th {
+	padding: 8px;
+	border-style: solid;
+	width: 1000px;
+}
+
+table td {
+	padding: 8px;
+	border-style: solid;
+	width: 250px;
+}
 
 #footer{width: 100% ;height: 200px;background-color: #333; position: absolute;}
 .footer-logo{margin-top: 15px;margin-left:100px;width: 230px;}
