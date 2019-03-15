@@ -4,6 +4,19 @@ import favicon from 'serve-favicon'
 import logger from 'morgan'
 import bodyParser from 'body-parser'
 import webpack from 'webpack'
+//路由模块化
+import router from './router/user'
+import api from './router/api'
+var mongoose = require('mongoose')
+var url = "mongodb://localhost:27017/test"
+var mongoose = require('mongoose')
+mongoose.connect(url, (err) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log('db connect success')
+    }
+})
 //Mock.js生成随机数据
 import Mock from 'mockjs'
 //import fs from 'fs'
@@ -47,57 +60,8 @@ app.get('/', function (req, res) {
 app.get('/login', function (req, res) {
   res.sendFile('./views/login.html')
 })
+
 app.get('/api/data1',function(req,res){
- res.json(Mock.mock({apiData:[
-                {   'img': ["images/node1.png","images/node2.png"],
-                    'name':[
-                        ['设备','电源状态', '连接状态', '开关状态', '开合次数', '工作时间'],
-                        ['设备','电源状态', '连接状态','设备连接数量','上行速率(Kb/s)','下行速率(Kb/s)']
-                    ],
-                    'data': [
-                        {'nodename':'HS1DS-E','status':'正常','line':'已连接','switch':'闭合',"openclose":1,'worktime':'2h'},
-                        {'nodename':'HS2GW-E','status':'关闭','line':'未连接','num':'1','Upstream|20-50': 1,'Downtream|50-100': 1},
-                        
-                    ]
-                }
-            ],
-            columns: [
-                {
-                    title: '姓名',
-                    key: 'name'
-                },
-                {
-                    title: '年龄 ',
-                    key: 'age',
-                    sortable: true
-                },
-                {
-                    title : '出生日期  ',
-                    key :'birthday',
-                    sortable: true
-                },
-                {
-                    title: '地址',
-                    key: 'address'
-                }
-            ],
-            data: [
-                {
-                    name: '小明',
-                    age: '22',
-                    birthday: '1997-04-02',
-                    address: '江西省抚州市黎川县'
-                },
-                {
-                    name: '宇成',
-                    age: '24',
-                    birthday: '1994-12-30',
-                    address: '广东省云浮市'
-                },
-            ]
-        }));
-})
-app.get('/api/data',function(req,res){
  res.json(Mock.mock({
         "status": 200,
         "data|1-9": [{
@@ -111,6 +75,9 @@ app.use('/v2', proxy({
     target: 'https://api.douban.com',
     changeOrigin: true
 }))
+app.use('/api',api)
+app.use('/users', router)
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found')

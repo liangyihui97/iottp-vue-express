@@ -223,7 +223,7 @@ components:{
     mounted (){
 setInterval(() =>{
 var self = this;
-    this.$axios.get('http://192.168.227.10:4000/api/data').then(function(response){
+    this.$axios.get('http://192.168.227.10:4000/api/data1').then(function(response){
 	self.data = response.data
 }).catch(function(error){
 console.log(error);
@@ -284,7 +284,7 @@ login() {
 getData:function(){
 setInterval(() =>{
 	var self = this;
-    this.$axios.get('http://192.168.227.10:4000/api/data1').then(function(response){
+    this.$axios.get('http://192.168.227.10:4000/api/data').then(function(response){
 	self.data = response.data.data;
 	self.columns = response.data.columns;
 	self.apiData = response.data.apiData;

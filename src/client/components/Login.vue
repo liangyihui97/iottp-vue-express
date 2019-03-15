@@ -40,18 +40,17 @@
     export default {
        methods: {
     login() {
-        this.$refs.loginForm.validate((valid) =>{
-            if (valid) {
-                if (this.user.name === 'admin' && this.user.pass === '123') {
-                    // dispatch采用Promise链式调用    
-			console.log('right');                     
-                    this.$store.dispatch('login', this.user).then(() =>{
+    this.$refs.loginForm.validate((valid) => {
+        if (valid) {
+            this.$axios.post('/users/validate', this.user).then((res) => {
+                if (res.data) {
+                    this.$store.dispatch('login', res.data).then(() => {
                         this.$notify({
                             type: 'success',
-                            message: '欢迎你,' + this.user.name + '!',
+                            message: '欢迎你,' + res.data.name + '!',
                             duration: 3000
                         })
-                        this.$router.go(-1)
+                        this.$router.replace('/')
                     })
                 } else {
                     this.$message({
@@ -60,11 +59,19 @@
                         showClose: true
                     })
                 }
-            } else {
-                return false
-            }
-        })
-    }
+            }).catch((err) => {
+                this.$message({
+                    type: 'error',
+                    message: '网络错误，请重试',
+                    showClose: true
+                })
+            })
+        }
+        else {
+            return false
+        }
+    })
+}
 },
         data () {
             return {

@@ -17,6 +17,8 @@
     "echarts": "^4.1.0",
     "element-ui": "^2.6.1",
     "mockjs": "^1.0.1-beta3",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.19",
     "vue": "^2.5.13",
     "vue-hot-reload-api": "^2.1.0",
     "vue-html-loader": "^1.2.4",
