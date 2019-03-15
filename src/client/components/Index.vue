@@ -78,6 +78,7 @@
                     <div class="banner-title-both">
                         <img class="img-l fl" src="../static/images/video.png" width="40" height="40">
                         <strong class="fl">教学视频</strong>
+			<div class="banner-title-all fr"><a>查看全部>></a></div>
                     </div>
                     <div id="appNav" v-cloak>
                         <tabs v-model="activeKey">
@@ -320,6 +321,7 @@
                     <div class="banner-title-both  ">
                         <img class="img-l fl" src="../static/images/other.png" width="40" height="40">
                         <strong class="fl">热门资源</strong>
+			<div class="banner-title-all fr"><a>查看全部>></a></div>
                     </div>
                     <div class="data-all">
                         <template v-for="txt in txts">
