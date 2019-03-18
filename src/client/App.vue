@@ -1,88 +1,94 @@
 <template>
-    <div id="index">
-        <div id="header" v-if="$route.name=='index'">
-        <div id="header_top">
-        <div id="logo" class="fl">
-            <a class="logo-a" title="物联网教学">
-            <img  class="fl" src="./static/images/logo.png" width="80" height="80">
-            <div class="fl logo-font">
-                <span class="logo-font-strong"><strong>物联网教学</strong></span><br/>
-                <span style="font-size: 10px">IoT Teaching Platform</span>
-            </div>
-            </a>
-        </div>
-        <div id="nav" class="menu fl">
-            <ul>
-                <li><router-link :to="{ name: 'index' }">首页</router-link></li>
-                <li><a>热门资源</a></li>
-                <li><router-link :to="{ name: 'teach' }">教学</router-link></li>
-                <li><a>热点新闻</a></li>
-                <li><a>视频教学</a></li>
-            </ul>
-        </div>
-        <div class="header_second_search fl">
-            <input type="text" class="search_text">
-            <input type="submit" value="" class="search_btn fr">
-        </div>
-            <div id="login" class="fr">
-                <span v-if="user"> <div class="uesrname fl">{{user.name+' '}}</div>
-            <el-button  type="warning" plain @click="login">注销</el-button>
-        </span>
-        <el-button v-else type="primary" @click="login" >点击登录</el-button>
-            </div>
-        </div>
-    </div>
-   <router-view></router-view>
-        
-	
-        <div id="footer" v-if="$route.name=='index'">
-        <div class="footer-logo fl ">
-            <a class="footer-logo-a" title="物联网教学">
-                <img  class="fl" src="./static/images/logo.png" width="80" height="80">
-                <div class="fl logo-font">
-                    <span class="logo-font-strong"><strong>物联网教学</strong></span><br/>
-                    <span style="font-size: 10px">IoT Teaching Platform</span>
-                </div>
-            </a>
-        </div>
-        <div class="introduce">
-            梁艺晖的毕业设计，基于Vue.js的物联网用户平台前端页面开发，使用技术有Vue.js、Express...
-        </div>
-        <div class="copyright">
-            <a>Copyright © 2018 - 2019 lyh-GDUT.</a>
-        </div>
-    </div>
-    </div>
+<div id="index"> 
+   <div id="header" v-if="$route.name=='index'"> 
+    <div id="header_top"> 
+     <div id="logo" class="fl"> 
+      <a class="logo-a" title="物联网教学"> <img class="fl" src="./static/images/logo.png" width="80" height="80" /> 
+       <div class="fl logo-font"> 
+        <span class="logo-font-strong"><strong>物联网教学</strong></span>
+        <br /> 
+        <span style="font-size: 10px">IoT Teaching Platform</span> 
+       </div> </a> 
+     </div> 
+     <div id="nav" class="menu fl"> 
+      <ul> 
+       <li>
+        <router-link :to="{ name: 'index' }">
+         首页
+        </router-link></li> 
+       <li><a>热门资源</a></li> 
+       <li>
+        <router-link :to="{ name: 'teach' }">
+         教学
+        </router-link></li> 
+       <li><a>热点新闻</a></li> 
+       <li><a>视频教学</a></li> 
+      </ul> 
+     </div> 
+     <div class="header_second_search fl"> 
+      <input type="text" class="search_text" /> 
+      <input type="submit" value="" class="search_btn fr" /> 
+     </div> 
+     <div id="login" class="fr"> 
+      <span v-if="user"> 
+       <div class="uesrname fl">
+        {{user.name+' '}}
+       </div> 
+       <el-button type="warning" plain="" @click="login">
+        注销
+       </el-button> </span> 
+      <el-button v-else="" type="primary" @click="login">
+       点击登录
+      </el-button> 
+     </div> 
+    </div> 
+   </div> 
+   <router-view></router-view> 
+   <div id="footer" v-if="$route.name=='index'"> 
+    <div class="footer-logo fl "> 
+     <a class="footer-logo-a" title="物联网教学"> <img class="fl" src="./static/images/logo.png" width="80" height="80" /> 
+      <div class="fl logo-font"> 
+       <span class="logo-font-strong"><strong>物联网教学</strong></span>
+       <br /> 
+       <span style="font-size: 10px">IoT Teaching Platform</span> 
+      </div> </a> 
+    </div> 
+    <div class="introduce">
+      梁艺晖的毕业设计，基于Vue.js的物联网用户平台前端页面开发，使用技术有Vue.js、Express... 
+    </div> 
+    <div class="copyright"> 
+     <a>Copyright &copy; 2018 - 2019 lyh-GDUT.</a> 
+    </div> 
+   </div> 
+  </div>
 </template>
 
 <script>
+export
+default {
+        methods:
+        {
+            login() {
+                this.$router.push('/login')
+            },
+            logout() {
+                this.$store.dispatch('logout').then(() =>{
+                    this.$router.push('/login')
+                })
+            }
+        },
+        computed: {
+            user() {
+                return this.$store.state.user
+            }
+        },
+        data() {
+            return {
+                message: 'Express + Vue boilerplate-Konata9',
+            }
+        },
 
-
-
-export default {
-    methods: {
-    login() {
-        this.$router.push('/login')
-    },
-    logout() {
-        this.$store.dispatch('logout').then(() =>{
-            this.$router.push('/login')
-        })
-    }
-},
-    computed: {
-    user() {
-        return this.$store.state.user
-    }
-},
-    data () {
-    return {
-      message: 'Express + Vue boilerplate-Konata9',
-    }
-  },
-        
-};
-
+    };
 </script>
 <style>
 @import './static/css/reset.css';
