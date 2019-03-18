@@ -51,7 +51,7 @@ export default {
                             message: '欢迎你,' + res.data.name + '!',
                             duration: 3000
                         })
-                        this.$router.replace('/')
+                        this.$router.go(-1)
                     })
                 } else {
                     this.$message({
