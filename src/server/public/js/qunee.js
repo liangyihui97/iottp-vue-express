@@ -1,9 +1,9 @@
 var graph = new Q.Graph('canvas');
 
                 var node1 = graph.createNode("HS1DS-E", -200, -50);
-                node1.image = "./images/node1.png";
+                node1.image = "http://192.168.227.10:4000/images/node1.png";
                 var node2 = graph.createNode("HS2GW-E\n节点级别:1\n地址：192.168.1.254", 200, -50);
-                node2.image = "./images/node2.png";
+                node2.image = "http://192.168.227.10:4000/images/node2.png";
                 var edge = graph.createEdge("ZigBee", node1, node2);
                 /*虚线样式*/
                 edge.edgeType = Q.Consts.EDGE_TYPE_ELBOW;

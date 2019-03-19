@@ -18,9 +18,16 @@
         </router-link></li> 
        <li><a>热门资源</a></li> 
        <li>
-        <router-link :to="{ name: 'teach' }">
-         教学
-        </router-link></li> 
+        <a v-clickoutside="handleClose" @mouseover="show=true">
+         教学<div class="select" v-show="show"> 
+       <router-link :to="{ name: 'teach1-1' }">
+         实训基础
+        </router-link>
+<router-link :to="{ name: 'teach2-1' }">
+         实训进阶
+        </router-link>
+       </div> 
+        </a></li> 
        <li><a>热点新闻</a></li> 
        <li><a>视频教学</a></li> 
       </ul> 
@@ -64,8 +71,7 @@
 </template>
 
 <script>
-export
-default {
+export default {
         methods:
         {
             login() {
@@ -75,7 +81,10 @@ default {
                 this.$store.dispatch('logout').then(() =>{
                     this.$router.push('/login')
                 })
-            }
+            },
+handleClose: function () {
+                this.show = false;
+            },
         },
         computed: {
             user() {
@@ -85,9 +94,29 @@ default {
         data() {
             return {
                 message: 'Express + Vue boilerplate-Konata9',
+show: false,
             }
         },
-
+      directives: {
+       clickoutside:{
+	    bind: function (el, binding, vnode) {
+            function documentHandler(e) {
+                if(el.contains(e.target)){
+                    return false;
+                }
+                if(binding.expression){//判断的是当前的指令 v-clickoutside 有没有写表达式，
+                    binding.value(e);//用来执行当前上下文 methods 中指定的函数。
+                }
+            }
+            el.__vueClickOutside__=documentHandler;//documentHandler的引用
+            document.addEventListener('mouseover',documentHandler);
+        },
+        unbind: function (el, binding, vnode) {
+            document.removeEventListener('mouseover',el.__vueClickOutside__);//因为自定义指令中不能用this.documentHandler
+            delete el.__vueClickOutside__;
+        }	
+	} 
+   },
     };
 </script>
 <style>
