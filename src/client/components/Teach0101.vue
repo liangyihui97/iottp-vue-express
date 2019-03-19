@@ -217,7 +217,7 @@ components:{
                 }
                 ],
       show: false,
-      apiData:[{'img':[],'name':[],'data':[]}]
+      apiData:[{'img':[[]],'name':[[]],'data':[[]]}]
     }
   },
     mounted (){
