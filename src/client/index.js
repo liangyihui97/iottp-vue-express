@@ -7,6 +7,7 @@ import echarts from 'echarts'
 
 
 import  './element'
+import './theme/element/index.css'
 
 Vue.config.debug = true
 Vue.config.productionTip = false
