@@ -1,9 +1,12 @@
 var mongoose = require('mongoose')
 
 var userSchema = new mongoose.Schema({
-    name: String,
+    username: String,
     pass: String,
-    nickName: String
+    tel: Number,
+    email: String,
+    name: String,
+    updated: { type: Date, default: Date.now },
 })
 
 module.exports = mongoose.model('User', userSchema)

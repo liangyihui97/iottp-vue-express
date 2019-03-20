@@ -4,7 +4,23 @@ var router = express.Router()
 var User = require('../model/user')
 
 router.route('/validate').post((req, res) => {
-    User.findOne({name: req.body.name, pass: req.body.pass}, (err, user) => {
+    User.findOne({username: req.body.username, pass: req.body.pass}, (err, user) => {
+        if (err) {
+            console.log(err)
+        }
+        res.json(user)
+    })
+})
+router.route('/insert').post((req, res) => {
+    User.create({username: req.body.username, pass: req.body.pass,tel: req.body.tel,email: req.body.email, name: req.body.name, update: req.body.update}, (err, user) => {
+        if (err) {
+            console.log(err)
+        }
+        res.json(user)
+    })
+})
+router.route('/update').post((req, res) => {
+    User.create({username: req.body.username, pass: req.body.pass}, (err, user) => {
         if (err) {
             console.log(err)
         }

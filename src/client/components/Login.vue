@@ -18,8 +18,8 @@
       </div> 
       <div class="login-submit"> 
        <el-form ref="loginForm" :model="user" :rules="rules" status-icon="" label-width="80px"> 
-        <el-form-item label="用户名" prop="name"> 
-         <el-input v-model="user.name"></el-input> 
+        <el-form-item label="用户名" prop="username"> 
+         <el-input v-model="user.username"></el-input> 
         </el-form-item> 
         <el-form-item label="密码" prop="pass"> 
          <el-input v-model="user.pass" type="password"></el-input> 
@@ -27,7 +27,10 @@
         <el-form-item> 
          <el-button type="primary" icon="el-icon-upload" @click="login">
           登录
-         </el-button> 
+         </el-button>
+	<el-button  @click="regist">
+          注册
+         </el-button>
         </el-form-item> 
        </el-form> 
       </div> 
@@ -40,6 +43,9 @@
 <script>
 export default {
        methods: {
+    regist() {
+                this.$router.push('/regist')
+            },
     login() {
     this.$refs.loginForm.validate((valid) => {
         if (valid) {
@@ -51,7 +57,7 @@ export default {
                             message: '欢迎你,' + res.data.name + '!',
                             duration: 3000
                         })
-                        this.$router.go(-1)
+                        this.$router.push('index')
                     })
                 } else {
                     this.$message({
@@ -78,7 +84,7 @@ export default {
             return {
                 user: {},
                 rules: {
-                    name: [
+                    username: [
                         {required: true, message: '用户名不能为空', trigger: 'blur'}
                     ],
                     pass: [

@@ -27,7 +27,7 @@ body{background: white;color: #001327;
     height: 28px;
     cursor: pointer;}
 #login{line-height: 90px;width:150px}
-.uesrname{width:40px;margin-right:20px;}
+.uesrname{width:50px;margin-right:10px;}
 .select{width : 124px; height : 83px;font-size : 12px;background-color : #fff;box-shadow: 0 1px 6px rgba(0, 0, 0 ,.2 );position: absolute;top: 90px;left:543px;z-index: 2;line-height: 40px;background: #ceeaff;}
 /*滑动*/
 .body{width: 100%;height: 2000px;background-color: #f5f5f6; margin-top: 9px}
