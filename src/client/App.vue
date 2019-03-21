@@ -35,18 +35,30 @@
      <div class="header_second_search fl"> 
       <input type="text" class="search_text" /> 
       <input type="submit" value="" class="search_btn fr" /> 
-     </div> 
-     <div id="login" class="fr"> 
+     </div>
+<a class="header-entry"v-if="user">个人中心</a> 
+<div class="header-btn" v-else=""> <el-button type="primary" @click="login">
+       点击登录
+      </el-button> 
+</div>
+     <div id="login" class="fr" v-clickoutside="handleClose1" @mouseover="show1=true"> 
+<img class="login-img" v-if="user" src="./static/images/user.jpg" > 
+
+<div class="header-nav" v-show="show1">
+<img class="header-nav-img" src="./static/images/up.png">
+<div class="header-user">
       <span v-if="user"> 
        <div class="uesrname fl">
         {{user.name+' '}}
        </div> 
-       <el-button type="warning" plain="" @click="login">
+       <el-button type="warning" plain="" @click="login" size="small">
         注销
        </el-button> </span> 
       <el-button v-else="" type="primary" @click="login">
        点击登录
       </el-button> 
+</div>
+</div>
      </div> 
     </div> 
    </div> 
@@ -85,6 +97,9 @@ export default {
 handleClose: function () {
                 this.show = false;
             },
+handleClose1: function () {
+                this.show1 = false;
+            },
         },
         computed: {
             user() {
@@ -95,6 +110,7 @@ handleClose: function () {
             return {
                 message: 'Express + Vue boilerplate-Konata9',
 show: false,
+show1: false
             }
         },
       directives: {
