@@ -1,7 +1,7 @@
 <template>
 <div class="main"> 
    <div style="height: 500px;" id="canvas"></div> 
-   <qunee-js src="http://192.168.227.10:4000/js/qunee.js"> 
+   <qunee-js src="http://192.168.227.10:4000/js/qunee0101.js"> 
    </qunee-js> 
    <div id="teach" v-cloak=""> 
     <div class="teach-nav"> 
@@ -43,7 +43,7 @@
        </div> 
       </div> 
       <div class="teach-title-txt fl">
-       <strong>实训1：门磁传感器ZigBee无线网络实训</strong>
+       <strong>实训1-1：门磁传感器ZigBee无线网络实训</strong>
       </div> 
       <div class="teach-user fr">
 <div class="teach-login fr" >
@@ -72,7 +72,7 @@
         网络结构 
       </div> 
       <div class="teach-structure-network"> 
-       <img src="../static/images/network.png" width="450" height="auto" /> 
+       <img src="../static/images/network0101.png" width="450" height="auto" /> 
       </div> 
      </div> 
      <div class="teach-data"> 
