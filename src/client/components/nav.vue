@@ -36,11 +36,9 @@ export default{
             },
             handleaChange: function (index) {
 
-                if(this.currentAvalue !== index) {
-                    this.currentAvalue = index;
-                }else{
-                    this.currentAvalue = '';
-                }
+                if(index==0){this.$router.push('/teach/train/1/1')}
+		else if (index==1){this.$router.push('/teach/train/2/1')}
+		else{this.$router.push('/teach/train/3/1')}
 
             },
             navCls: function (index) {
@@ -53,8 +51,9 @@ export default{
                 ]
             },
             navaCls:function(index){
-                return{
-                    'nav-a-active':index === this.currentAvalue
+		var str = this.$route.path.split("/")[3]-1;
+		return{
+                    'nav-a-active':str==index
                 }
             },
             show: function (index) {

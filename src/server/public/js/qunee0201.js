@@ -61,10 +61,18 @@ var graph = new Q.Graph('canvas');
                 Q.Gradient.LINEAR_GRADIENT_VERTICAL);
 
 		var edge = graph.createEdge("TCP/IP", node4, node5);
-		/*虚线样式*/
+		/*实线样式*/
                 edge.setStyle(Q.Styles.EDGE_COLOR, '#88AAEE');
 		edge.setStyle(Q.Styles.EDGE_WIDTH, 2);
 		edge.edgeType = Q.Consts.EDGE_TYPE_VERTICAL_HORIZONTAL;
+
+		edge.setStyle(Q.Styles.LABEL_POSITION, Q.Position.CENTER_TOP);
+                edge.setStyle(Q.Styles.LABEL_ANCHOR_POSITION, Q.Position.CENTER_BOTTOM);
+                edge.setStyle(Q.Styles.LABEL_BORDER, 1);
+                edge.setStyle(Q.Styles.LABEL_POINTER, true);
+                edge.setStyle(Q.Styles.LABEL_PADDING, new Q.Insets(2, 5));
+                edge.setStyle(Q.Styles.LABEL_BACKGROUND_GRADIENT,
+                Q.Gradient.LINEAR_GRADIENT_VERTICAL);
                 /*双击改名*/
                 graph.ondblclick = function(evt){
                     var node = graph.getElementByMouseEvent(evt);
