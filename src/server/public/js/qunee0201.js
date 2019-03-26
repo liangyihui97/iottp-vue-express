@@ -1,18 +1,18 @@
 var graph = new Q.Graph('canvas');
 
-                var node1 = graph.createNode("灯光", -300, -200);
+                var node1 = graph.createNode("灯光", -340, -200);
                 node1.image = "http://192.168.227.10:4000/images/node5.png";
 		node1.size = {width: 70};
-                var node2 = graph.createNode("智能开关", -200, 0);
+                var node2 = graph.createNode("智能开关", -200, 50);
                 node2.image = "http://192.168.227.10:4000/images/node3.png";
 		node2.size = {width: 50};
-		var node3 = graph.createNode("门磁传感器", -200, -100);
+		var node3 = graph.createNode("门磁传感器", -200, -150);
 		node3.image = "http://192.168.227.10:4000/images/node1.png";
 		node3.size = {width: 50};
-		var node4 = graph.createNode("ZigBee智能网关", -50, -50);
+		var node4 = graph.createNode("ZigBee智能网关", 50, -50);
 		node4.image = "http://192.168.227.10:4000/images/node2.png";
 		node4.size = {width: 50};
-		var node5 = graph.createNode("中央控制器", 150, -50);
+		var node5 = graph.createNode("中央控制器", 250, -50);
 		node5.image = "http://192.168.227.10:4000/images/node4.png";
 		node5.size = {width: 70};
                 var edge = graph.createEdge("", node1, node2);

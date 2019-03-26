@@ -1,14 +1,14 @@
 var graph = new Q.Graph('canvas');
 
-                var node1 = graph.createNode("AM600\n汇川工控", -200, -50);
+                var node1 = graph.createNode("AM600\n汇川工控", -250, -50);
                 node1.image = "http://192.168.227.10:4000/images/node6.png";
-		node1.size = {width: 70};
-                var node2 = graph.createNode("智能开关", 0, -50);
+		node1.size = {width: 90};
+                var node2 = graph.createNode("智能网关", 0, -50);
                 node2.image = "http://192.168.227.10:4000/images/node7.png";
-		node2.size = {width: 50};
-		var node3 = graph.createNode("门磁传感器", 200, -50);
+		node2.size = {width: 40};
+		var node3 = graph.createNode("中央控制器", 250, -50);
 		node3.image = "http://192.168.227.10:4000/images/node4.png";
-		node3.size = {width: 50};
+		node3.size = {width: 70};
 
                 var edge = graph.createEdge("TCP/IP", node1, node2);
               
