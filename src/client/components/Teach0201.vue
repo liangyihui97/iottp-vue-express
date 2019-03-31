@@ -1,5 +1,6 @@
 <template>
-<div class="main"> 
+<div>
+<div class="main" v-if="user"> 
    <div style="height: 500px;" id="canvas"></div> 
    <qunee-js src="http://192.168.227.10:4000/js/qunee0201.js"> 
    </qunee-js> 
@@ -173,6 +174,8 @@
     </div> 
    </div> 
   </div>
+<div v-else  class="teach-nologin"><a @click="login">请先登录</a></div>
+</div>
 </template>
 
 <script>
@@ -328,7 +331,12 @@ var myChart2 = this.$echarts.init(document.getElementById('myChart2'),'light');
 },
 computed: {
     user() {
+        if (!this.$store.state.isLogin) {    
+            this.$store.state.isLogin=sessionStorage.getItem('isLogin');   //从sessionStorage中读取状态
+            this.$store.state.user=JSON.parse(sessionStorage.getItem('user'));
+        }
         return this.$store.state.user
+
     }
 },
 }

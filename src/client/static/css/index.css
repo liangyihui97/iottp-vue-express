@@ -175,7 +175,8 @@ article img{width:100%}
 .nav-text-sub a:hover{color: #ffffff;}
 
 
-
+.teach-nologin{margin:0 auto;height:400px;width:1000px;text-align:center;line-height:400px;font-size:18px}
+.teach-nologin a:hover{color:#3399ff;cursor: pointer;}
 .teach-login{line-height:50px;width:150px;margin-right:50px;}
 .teach-page{background-color: rgb(243, 243, 244);margin-left:230px;min-height: 100%;min-width:1300px;position: absolute;}
 .title{width:1290px;height: 50px;background-color: #fff;color: rgb(136, 136, 136); font-size: 18px;line-height:50px;position: absolute;left: 5px;}

@@ -103,8 +103,13 @@ handleClose1: function () {
         },
         computed: {
             user() {
-                return this.$store.state.user
-            }
+        if (!this.$store.state.isLogin) {    
+            this.$store.state.isLogin=sessionStorage.getItem('isLogin');   //从sessionStorage中读取状态
+            this.$store.state.user=JSON.parse(sessionStorage.getItem('user'));
+        }
+        return this.$store.state.user
+
+    }
         },
         data() {
             return {

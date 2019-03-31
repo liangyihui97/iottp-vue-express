@@ -9,10 +9,17 @@ const store = new Vuex.Store({
   },
   mutations: {
     login (state, payload) {
-            state.user = payload
+            console.log(JSON.stringify(payload))
+sessionStorage.setItem("user", JSON.stringify(payload));  //添加到sessionStorage
+        sessionStorage.setItem("isLogin",true);
+state.user = payload
+ state.isLogin=true
         },
   logout (state) {
+sessionStorage.removeItem("user");  //移除sessionStorage
+        sessionStorage.removeItem("isLogin");
             state.user = undefined
+ state.isLogin=false
         }
   },
   actions: {
