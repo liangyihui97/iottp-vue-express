@@ -51,7 +51,7 @@
        <div class="uesrname fl">
         {{user.name+' '}}
        </div> 
-       <el-button type="warning" plain="" @click="login" size="small">
+       <el-button type="warning" plain="" @click="logout" size="small">
         注销
        </el-button> </span> 
       <el-button v-else="" type="primary" @click="login">
@@ -91,7 +91,7 @@ export default {
             },
             logout() {
                 this.$store.dispatch('logout').then(() =>{
-                    this.$router.push('/login')
+                    //this.$router.push('/login')
                 })
             },
 handleClose: function () {

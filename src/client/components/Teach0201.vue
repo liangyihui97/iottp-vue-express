@@ -49,7 +49,7 @@
       <div class="teach-user fr">
 <div class="teach-login fr" >
                 <span v-if="user"> <div class="uesrname fl">{{user.name+' '}}</div>
-            <el-button  type="warning" plain @click="login">注销</el-button>
+            <el-button  type="warning" plain @click="logout">注销</el-button>
         </span>
         <el-button v-else type="primary" @click="login" >点击登录</el-button>
             </div>
@@ -275,7 +275,7 @@ login() {
     },
     logout() {
         this.$store.dispatch('logout').then(() =>{
-            this.$router.push('/login')
+            //this.$router.push('/login')
         })
     },
         handleClose: function () {
