@@ -179,7 +179,7 @@ article img{width:100%}
 .teach-nologin a:hover{color:#3399ff;cursor: pointer;}
 .teach-login{line-height:50px;width:150px;margin-right:50px;}
 .teach-page{background-color: rgb(243, 243, 244);margin-left:230px;min-height: 100%;min-width:1300px;position: absolute;}
-.title{width:1290px;height: 50px;background-color: #fff;color: rgb(136, 136, 136); font-size: 18px;line-height:50px;position: absolute;left: 5px;}
+.title{width:1290px;height: 50px;background-color: #fff;color: rgb(136, 136, 136); font-size: 18px;line-height:50px;position: absolute;}
 .mychart {margin-left: 50px;}
 .teach-select{position: absolute;left: 10px;top:7px;cursor:pointer;width:100px;height: 40px;}
 .teach-select-text{font-size: 15px;color: #22a0ff;line-height: 40px;}
@@ -195,21 +195,23 @@ article img{width:100%}
 .dropdown p:hover{background-color: #22a0ff;}
 
 /*拓扑界面*/
-.teach-console{position:absolute;width:800px;height:500px;background-color: #fff; top:55px;left: 5px;}
+.teach-console{position:absolute;width:800px;height:500px;background-color: #fff; top:60px;border-radius: 4px;}
 .teach-title{width:70px;height: 20px;margin:3px 10px 0px 11px;color: rgb(127, 127, 127); font-size:16px;}
 
 #canvas{position: absolute;outline: none;width: 800px;z-index: 1;display:block;left: 235px;top:100px}
 
-.teach-console-test{position: absolute;bottom: 50px;right: 20px;color:rgb(127, 127, 127);z-index: 2;border: rgb(127, 127, 127) solid 1px;border-radius: 5px;padding: 2px 4px 2px 4px;}
+.teach-console-test{position: absolute;bottom: 50px;right: 10px;color:rgb(127, 127, 127);z-index: 2;background-color: #BBDEFB ;border-radius: 3px;padding: 3px 4px 3px 4px;}
+.teach-console-test:hover{background-color:#a1d4f3;}
 .teach-console img{padding-left: 5px }
-.teach-console-submit{position: absolute;bottom: 10px;right: 20px;color:rgb(127, 127, 127);z-index: 2;border: rgb(127, 127, 127) solid 1px;border-radius: 5px;padding: 2px 4px 2px 4px;}
-.teach-console a:hover{color: #4CAF50;}
+.teach-console-submit{position: absolute;bottom: 10px;right: 10px;color:rgb(127, 127, 127);z-index: 2;background-color: #BBDEFB ;border-radius: 3px;padding: 3px 4px 3px 4px;}
+.teach-console-submit:hover{background-color:#a1d4f3;}
+.teach-console a:hover{color: #000}
 
 /*网络结构*/
-.teach-structure{position:absolute;width:485px;height:200px;background-color: #fff; top:55px;right: 5px;}
+.teach-structure{position:absolute;width:485px;height:200px;background-color: #fff; top:60px;right: 5px;border-radius: 4px;}
 .teach-structure-network{position: absolute;bottom: 40px;left: 10px;}
 /*设备检测*/
-.teach-data{position:absolute;width:485px;height: 295px;background-color: #fff;top:260px;right: 5px;}
+.teach-data{position:absolute;width:485px;height: 290px;background-color: #fff;top:270px;right: 5px;border-radius: 4px;}
 
 .teach-data-axios{position:absolute;width: 485px;height: 200px;top:20px;left:20px;color:rgb(127, 127, 127);}
 .teach-node-img-content{margin-top:12px;margin-bottom: 90px}
@@ -220,11 +222,11 @@ article img{width:100%}
 .right{color: #4CAF50;font-weight:bold;}
 .error{color: #D32F2F;font-weight:bold;}
 /*可视化*/
-.teach-chart{position:absolute;width:100%;height:400px;background-color: #fff; top:560px;left: 5px;}
+.teach-chart{position:absolute;width:100%;height:400px;background-color: #fff; top:570px;border-radius: 4px;}
 
 
 /*产品说明*/
-.teach-info{position:absolute;width:100%;height:530px;background-color: #fff; top:965px;left: 5px;}
+.teach-info{position:absolute;width:100%;height:530px;background-color: #fff; top:980px;border-radius: 4px;}
 .teach-info-content{margin:20px 50px 0 10px;}
 table, td, th {
 	margin-bottom:10px;
