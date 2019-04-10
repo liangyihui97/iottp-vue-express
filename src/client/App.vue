@@ -1,6 +1,6 @@
 <template>
 <div id="index"> 
-   <div id="header" v-if="$route.name=='index' || $route.name=='usercenter'"> 
+   <div id="header" v-if="$route.name=='index' || $route.name=='userprofile'|| $route.name=='usermanage'|| $route.name=='userasset'|| $route.name=='userdashboard'"> 
     <div id="header_top"> 
      <div id="logo" class="fl"> 
       <a class="logo-a" title="物联网教学"> <img class="fl" src="./static/images/logo.png" width="80" height="80" /> 
@@ -36,7 +36,7 @@
       <input type="text" class="search_text" /> 
       <input type="submit" value="" class="search_btn fr" /> 
      </div>
-<router-link :to="{ name: 'usercenter' }" v-if="user" class="header-entry">个人中心</router-link>
+<router-link :to="{ name: 'userprofile' }" v-if="user" class="header-entry">个人中心</router-link>
 <div class="header-btn" v-else=""> <el-button type="primary" @click="login">
        点击登录
       </el-button> 
