@@ -403,8 +403,8 @@
 
 <script>
 //视频栏选择组件
-import pane from './pane'
-import tabs from './tabs'
+import pane from '../components/pane'
+import tabs from '../components/tabs'
 
 export default {
 	components:{pane,tabs},

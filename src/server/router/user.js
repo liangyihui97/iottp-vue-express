@@ -12,7 +12,7 @@ router.route('/validate').post((req, res) => {
     })
 })
 router.route('/insert').post((req, res) => {
-    User.create({username: req.body.username, pass: req.body.pass,tel: req.body.tel,email: req.body.email, name: req.body.name, update: req.body.update}, (err, user) => {
+    User.create({username: req.body.username, userRole: req.body.userRole, pass: req.body.pass,tel: req.body.tel,email: req.body.email, name: req.body.name, rtime: req.body.rtime}, (err, user) => {
         if (err) {
             console.log(err)
         }

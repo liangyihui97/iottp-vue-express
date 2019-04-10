@@ -179,8 +179,8 @@
 </template>
 
 <script>
-import myNav from './nav'
-import myData from './myData'
+import myNav from '../components/nav'
+import myData from '../components/myData'
 
 export default {
 components:{

@@ -1,7 +1,8 @@
 <template>
-<div class="main"> 
+<div>
+<div class="main" v-if="user"> 
    <div style="height: 500px;" id="canvas"></div> 
-   <qunee-js src="http://192.168.227.10:4000/js/qunee.js"> 
+   <qunee-js src="http://192.168.227.10:4000/js/qunee0201.js"> 
    </qunee-js> 
    <div id="teach" v-cloak=""> 
     <div class="teach-nav"> 
@@ -43,12 +44,12 @@
        </div> 
       </div> 
       <div class="teach-title-txt fl">
-       <strong>实训1：门磁传感器ZigBee无线网络实训</strong>
+       <strong>实训2-1：照明电路的ZigBee无线网络控制</strong>
       </div> 
       <div class="teach-user fr">
 <div class="teach-login fr" >
                 <span v-if="user"> <div class="uesrname fl">{{user.name+' '}}</div>
-            <el-button  type="warning" plain @click="login" size="small">注销</el-button>
+            <el-button  type="warning" plain @click="logout">注销</el-button>
         </span>
         <el-button v-else type="primary" @click="login" >点击登录</el-button>
             </div>
@@ -72,7 +73,7 @@
         网络结构 
       </div> 
       <div class="teach-structure-network"> 
-       <img src="../static/images/network.png" width="450" height="auto" /> 
+       <img src="../static/images/network0201.png" width="450" height="auto" /> 
       </div> 
      </div> 
      <div class="teach-data"> 
@@ -173,11 +174,13 @@
     </div> 
    </div> 
   </div>
+<div v-else  class="teach-nologin"><a @click="login">请先登录</a></div>
+</div>
 </template>
 
 <script>
-import myNav from './nav'
-import myData from './myData'
+import myNav from '../components/nav'
+import myData from '../components/myData'
 
 export default {
 components:{
@@ -217,7 +220,7 @@ components:{
                 }
                 ],
       show: false,
-      apiData:[{'img':[],'name':[],'data':[]}]
+      apiData:[{'img':[[]],'name':[[]],'data':[[]]}]
     }
   },
     mounted (){
@@ -272,7 +275,7 @@ login() {
     },
     logout() {
         this.$store.dispatch('logout').then(() =>{
-            this.$router.push('/login')
+            //this.$router.push('/login')
         })
     },
         handleClose: function () {
@@ -328,7 +331,12 @@ var myChart2 = this.$echarts.init(document.getElementById('myChart2'),'light');
 },
 computed: {
     user() {
+        if (!this.$store.state.isLogin) {    
+            this.$store.state.isLogin=sessionStorage.getItem('isLogin');   //从sessionStorage中读取状态
+            this.$store.state.user=JSON.parse(sessionStorage.getItem('user'));
+        }
         return this.$store.state.user
+
     }
 },
 }

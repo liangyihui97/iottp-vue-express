@@ -9,6 +9,12 @@
 
       <h3>用户注册</h3>
 
+       <el-form-item>
+        <el-radio v-model="ReginForm.userRole" label="学生">学生</el-radio>
+       <el-radio v-model="ReginForm.userRole" label="老师">老师</el-radio>
+      </el-form-item>
+
+
       <el-form-item prop="username">
         <el-input 
           type="text"
@@ -104,13 +110,14 @@ export default {
     }
     return {
       ReginForm: {
+	userRole: '学生',
         username: '',
         pass: '',
         confirmpassword: '',
         tel: '',
         email: '',
         name: '',
-        update: new Date()
+        rtime: this.time(),
       },
       logining: false,
       rule: {
@@ -166,6 +173,10 @@ export default {
   },
   methods: {
     // ...
+    time () {
+     var t = new Date();
+     return t.toLocaleString();
+},
     submit () {
      this.$refs.ReginForm.validate((valid) => {
       if (valid) {
