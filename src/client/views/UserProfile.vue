@@ -21,9 +21,43 @@
 
     </ul>
    </div> 
-   <div class="teach-page">
-{{user.name+' '}}
-   </div>
+   <div class="user-page">
+                <div class="user-info">
+                    <div class="user-title"><h3>个人信息</h3></div>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td colspan="2"><img src="../static/images/user.jpg" class="uer-img"></td>
+                        </tr>
+                        <tr>
+                            <td class="text-navy">用户名</td>
+                            <td>{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-navy">名称</td>
+                            <td>{{user.name}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-navy">角色</td>
+                            <td>{{user.userRole}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-navy">电话</td>
+                            <td>{{user.tel}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-navy">邮件</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-navy">创建日期</td>
+                            <td>{{user.rtime}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
  </div>
 </template>
 

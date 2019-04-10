@@ -26,12 +26,12 @@ body{background: white;color: #001327;
     width: 28px;
     height: 28px;
     cursor: pointer;}
-#login{line-height: 90px;width:150px;position: absolute;right:10px;}
+#login{line-height: 90px;width:150px;position: absolute;left:1355px;}
 .login-img{width:50px; height:50px; border-radius:50%;border: 1px solid #22a0ff;position: absolute;top: 20px;right:26px;}
 #login:hover img{transition: all 200ms;-webkit-transform: scale(1.1);-moz-transform: scale(1.1);-ms-transform: scale(1.1);-o-transform: scale(1.1);transform: scale(1.1);}
-.header-entry{position: absolute;right:110px;line-height:90px;}
+.header-entry{position: absolute;left:1350px;line-height:90px;height:56px;width:89px}
 .header-btn{position: absolute;top: 27px;right: 35px;}
-.header-nav{padding-top: 14px;position: absolute;top:70px;width: 150px;height: 150px;}
+.header-nav{padding-top: 14px;position: absolute;top:70px;width: 150px;height: 150px;z-index:2;}
 .header-nav-img{position: absolute;height:21px;top:1px;right:40px;z-index:2;}
 .header-user{background-color: #f5f5f6;width: 150px;height:80px;position: absolute;box-shadow: 0px 3px 10px #B4BCCC;padding-left:10px;}
 .uesrname{width:70px;margin-right:10px;}
@@ -228,34 +228,34 @@ article img{width:100%}
 /*产品说明*/
 .teach-info{position:absolute;width:100%;height:530px;background-color: #fff; top:980px;border-radius: 4px;}
 .teach-info-content{margin:20px 50px 0 10px;}
-table, td, th {
-	margin-bottom:10px;
-	border: 2px solid #80c7ff;
-	background-color: #bee2ff;
-	color: rgb(98, 98, 98);
-	font-size: 16px;
-	width: 1000px;
+.teach-info table, .teach-info td, .teach-info th {
+    margin-bottom:10px;
+    border: 2px solid #80c7ff;
+    background-color: #bee2ff;
+    color: rgb(98, 98, 98);
+    font-size: 16px;
+    width: 1000px;
 }
 
-table {
-	font-family: verdana,arial,sans-serif;
-	font-size: 11px;
-	color: #333333;
-	border-color: #229eff;
-	border-collapse: collapse;
-	width: 100%;
+.teach-info table {
+    font-family: verdana,arial,sans-serif;
+    font-size: 11px;
+    color: #333333;
+    border-color: #229eff;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-table th {
-	padding: 8px;
-	border-style: solid;
-	width: 1000px;
+.teach-info table th {
+    padding: 8px;
+    border-style: solid;
+    width: 1000px;
 }
 
-table td {
-	padding: 8px;
-	border-style: solid;
-	width: 250px;
+.teach-info table td {
+    padding: 8px;
+    border-style: solid;
+    width: 250px;
 }
 
 #footer{width: 100% ;height: 200px;background-color: #333; position: absolute;}
@@ -281,3 +281,14 @@ table td {
 
 
 .user-nav{height:700px;background-color: #2b333b;border-color: #2b333b;z-index: 2001;position: absolute;width: 230px;}
+.user-page{background-color: rgb(243, 243, 244);margin-left:230px;min-height: 100%;min-width:1300px;position: absolute;}
+.user-info{height: 600px;width: 500px;background-color: #fff;position: absolute;top:20px;left:20px;border-radius: 4px;}
+.user-title{font-weight: 600; font-size: 13px;margin-left: 25px;}
+.uer-img{width: 65px;
+    height: 65px;
+    border-radius: 50%;}
+.user-info table{margin:0 auto;border-collapse:collapse;width: 90%;}
+.user-info tr{border-top: 1px solid #e7eaec;border-bottom: 1px solid #e7eaec;}
+.user-info td{ padding: 8px;width: 50%;}
+.user-info th{ padding: 8px;border-style: solid;}
+.text-navy{color:#80c7ff}
