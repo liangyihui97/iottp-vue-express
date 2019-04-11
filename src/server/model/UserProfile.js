@@ -10,4 +10,6 @@ var userSchema = new mongoose.Schema({
     rtime: String
 })
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('UserProfile', userSchema)
+
+

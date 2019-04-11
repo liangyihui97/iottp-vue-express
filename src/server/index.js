@@ -5,7 +5,8 @@ import logger from 'morgan'
 import bodyParser from 'body-parser'
 import webpack from 'webpack'
 //路由模块化
-import router from './router/user'
+import router1 from './router/userprofile'
+import router2 from './router/usermanage'
 import api from './router/api'
 var mongoose = require('mongoose')
 var url = "mongodb://localhost:27017/test"
@@ -76,7 +77,8 @@ app.use('/v2', proxy({
     changeOrigin: true
 }))
 app.use('/api',api)
-app.use('/users', router)
+app.use('/users/profile', router1)
+app.use('/users/manage', router2)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

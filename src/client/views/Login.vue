@@ -49,7 +49,7 @@ export default {
     login() {
     this.$refs.loginForm.validate((valid) => {
         if (valid) {
-            this.$axios.post('/users/validate', this.user).then((res) => {
+            this.$axios.post('/users/profile/validate', this.user).then((res) => {
                 if (res.data) {
                     this.$store.dispatch('login', res.data).then(() => {
                         this.$notify({

@@ -180,15 +180,23 @@ export default {
     submit () {
      this.$refs.ReginForm.validate((valid) => {
       if (valid) {
-            this.$axios.post('/users/insert', this.ReginForm).then((res) => {
-                if (res.data) {
+            this.$axios.post('/users/profile/insert', this.ReginForm).then((res) => {
+                if (res.data!=='erro'&&res.data!==null) {
                         this.$notify({
                             type: 'success',
                             message: '注册成功!'+res.data.name,
                             duration: 3000
                         })
                         this.$router.go(-1)
-                } else {
+                } else if(res.data=='erro'){
+this.$message({
+                        type: 'error',
+                        message: '该用户已经存在！',
+                        showClose: true
+                    })
+}
+
+else {
                     this.$message({
                         type: 'error',
                         message: '格式有误，请重新输入',
