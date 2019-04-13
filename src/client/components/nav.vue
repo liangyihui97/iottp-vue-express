@@ -19,9 +19,9 @@ export default{
           props:['value'],
         data: function(){
             return {
-                currentValue: 2,
+                currentValue: 0,
                 currentAvalue: 0,
-                showtext: 2
+                showtext: 0
             }
         },
         methods:{
@@ -67,7 +67,7 @@ export default{
             },
             height: function (index) {
 
-                if(index ===2){
+                if(index ===0){
                     return 'height:200px'
                 }
             }

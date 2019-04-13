@@ -206,14 +206,6 @@ components:{
       data2: [],
       content:[
                 {
-                    content: '仪表盘',
-                    img: require('../static/images/01nav.png')
-                },
-                {
-                    content:'设备管理',
-                    img: require('../static/images/02nav.png')
-                },
-                {
                     content:'教学内容',
                     img: require('../static/images/03nav.png'),
 		    texts:['基础实训模块','智能家居实训模块','工业级实训模块']

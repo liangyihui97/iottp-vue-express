@@ -17,9 +17,10 @@
          首页
         </router-link></li> 
        <li><a>热门资源</a></li> 
-       <li>
-        <a v-clickoutside="handleClose" @mouseover="show=true">
-         教学<div class="select" v-show="show"> 
+       <li v-clickoutside="handleClose" @mouseover="show=true">
+        <a>
+         实训教学 </a>
+<div class="select" v-show="show"> 
        <router-link :to="{ name: 'teach1-1' }">
          实训基础
         </router-link>
@@ -27,7 +28,7 @@
          实训进阶
         </router-link>
        </div> 
-        </a></li> 
+       </li> 
        <li><a>热点新闻</a></li> 
        <li><a>视频教学</a></li> 
       </ul> 
@@ -91,7 +92,7 @@ export default {
             },
             logout() {
                 this.$store.dispatch('logout').then(() =>{
-                    //this.$router.push('/login')
+                    this.$router.push('/index')
                 })
             },
 handleClose: function () {

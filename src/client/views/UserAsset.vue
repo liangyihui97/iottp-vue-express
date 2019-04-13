@@ -10,7 +10,7 @@
 <img src="../static/images/userinfo.png" height="25" width="25" class="fl">
 <div class="nav-text fl">个人信息</div>
      </li>
-      <li class="nav-content" @click.stop="handleaChange(2)">
+      <li class="nav-content" @click.stop="handleaChange(2)" v-if="user.userRole=='老师'">
 <img src="../static/images/usermanage.png" height="25" width="25" class="fl">
 <div class="nav-text fl">用户管理</div>
      </li>
