@@ -21,9 +21,9 @@
 
     </ul>
    </div> 
-   <div class="teach-page">
-{{user.name+' '}}
-   </div>
+
+<div class="user-page"><div class="unfinished">敬请期待</div></div>
+
  </div>
 </template>
 

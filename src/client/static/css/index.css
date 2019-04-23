@@ -292,3 +292,5 @@ article img{width:100%}
 .user-info td{ padding: 8px;width: 50%;}
 .user-info th{ padding: 8px;border-style: solid;}
 .text-navy{color:#80c7ff}
+
+.unfinished{position: absolute;top:250px;left:560px;font-size:20px;color:#80c7ff;}

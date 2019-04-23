@@ -8,9 +8,8 @@ import webpack from 'webpack'
 import router1 from './router/userprofile'
 import router2 from './router/usermanage'
 import api from './router/api'
-var mongoose = require('mongoose')
+import mongoose from 'mongoose'
 var url = "mongodb://localhost:27017/test"
-var mongoose = require('mongoose')
 mongoose.connect(url, (err) => {
     if (err) {
         console.log(err)
