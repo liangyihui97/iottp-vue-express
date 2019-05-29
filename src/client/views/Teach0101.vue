@@ -2,7 +2,7 @@
 <div>
 <div class="main" v-if="user"> 
    <div style="height: 500px;" id="canvas"></div> 
-   <qunee-js src="http://192.168.227.10:4000/js/qunee0101.js"> 
+   <qunee-js :src="url"> 
    </qunee-js> 
    <div id="teach" v-cloak=""> 
     <div class="teach-nav"> 
@@ -201,6 +201,7 @@ components:{
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
+url:"http://"+location.hostname+":4000/js/qunee0101.js",
       columns: [],
       data: [],
       data2: [],
@@ -218,7 +219,7 @@ components:{
     mounted (){
 setInterval(() =>{
 var self = this;
-    this.$axios.get('http://192.168.227.10:4000/api/data1').then(function(response){
+    this.$axios.get("http://"+location.hostname+":4000/api/data1").then(function(response){
 	self.data = response.data
 }).catch(function(error){
 console.log(error);
@@ -279,7 +280,7 @@ login() {
 getData:function(){
 setInterval(() =>{
 	var self = this;
-    this.$axios.get('http://192.168.227.10:4000/api/data').then(function(response){
+    this.$axios.get("http://"+location.hostname+":4000/api/data").then(function(response){
 	self.data = response.data.data;
 	self.columns = response.data.columns;
 	self.apiData = response.data.apiData;
