@@ -4,7 +4,7 @@ import Mock from 'mockjs'
 
 router.route('/data').get((req, res) => {
  res.json(Mock.mock({apiData:[
-                {   'img': ["http://192.168.227.10:4000/images/node1.png","http://192.168.227.10:4000/images/node2.png"],
+                {   'img': [":4000/images/node1.png",":4000/images/node2.png"],
                     'name':[
                         ['设备','电源状态', '连接状态', '开关状态', '开合次数', '工作时间'],
                         ['设备','电源状态', '连接状态','设备连接数量','上行速率(Kb/s)','下行速率(Kb/s)']

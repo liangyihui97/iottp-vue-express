@@ -2,7 +2,7 @@
 <div class="teach-data-axios"> 
    <div class="teach-node-img fl"> 
     <div class="teach-node-img-content" v-for="itemimg in value[0].img">
-     <img :src="itemimg" />
+     <img :src="img(itemimg)" />
     </div> 
    </div> 
    <div class="teach-data-name fl"> 
@@ -33,8 +33,13 @@ export default{
             right: function (itemd) {
                 if(itemd==='正常'||itemd==='已连接'){return 'right'}
                 else if(itemd==='关闭'||itemd==='未连接'){return 'error'}
-            }
+            },
+img:function(itemimg){
+if(itemimg==''){return ''}
+else {return "http://"+location.hostname+itemimg}
+}
         }
+	    
 
 }
 </script>
