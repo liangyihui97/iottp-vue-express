@@ -200,12 +200,12 @@ article img{width:100%}
 
 #canvas{position: absolute;outline: none;width: 800px;z-index: 1;display:block;left: 235px;top:100px}
 
-.teach-console-test{position: absolute;bottom: 50px;right: 10px;color:rgb(127, 127, 127);z-index: 2;background-color: #BBDEFB ;border-radius: 3px;padding: 3px 4px 3px 4px;}
+.teach-console-test{position: absolute;bottom: 50px;right: 10px;color:rgb(127, 127, 127);z-index: 2;background-color: #BBDEFB ;border-radius: 3px;padding: 3px 4px 3px 4px;cursor: pointer;}
 .teach-console-test:hover{background-color:#a1d4f3;}
 .teach-console img{padding-left: 5px }
-.teach-console-submit{position: absolute;bottom: 10px;right: 10px;color:rgb(127, 127, 127);z-index: 2;background-color: #BBDEFB ;border-radius: 3px;padding: 3px 4px 3px 4px;}
+.teach-console-submit{position: absolute;bottom: 10px;right: 10px;color:rgb(127, 127, 127);z-index: 2;background-color: #BBDEFB ;border-radius: 3px;padding: 3px 4px 3px 4px;cursor: pointer;}
 .teach-console-submit:hover{background-color:#a1d4f3;}
-.teach-console a:hover{color: #000}
+.teach-console hover{color: #000}
 
 /*网络结构*/
 .teach-structure{position:absolute;width:485px;height:200px;background-color: #fff; top:60px;right: 5px;border-radius: 4px;}

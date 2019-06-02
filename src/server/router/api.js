@@ -3,7 +3,8 @@ var router = express.Router()
 import Mock from 'mockjs'
 
 router.route('/data').get((req, res) => {
- res.json(Mock.mock({apiData:[
+ res.json(Mock.mock({
+	    apiData:[
                 {   'img': [":4000/images/node1.png",":4000/images/node2.png"],
                     'name':[
                         ['设备','电源状态', '连接状态', '开关状态', '开合次数', '工作时间'],
@@ -52,5 +53,18 @@ router.route('/data').get((req, res) => {
             ]
         }));
 })
-
+router.route('/echartdata').get((req, res) => {
+ res.json(Mock.mock({
+	echartdata:[
+                {
+                    name:["开合次数","工作时间(h)","数量","上行(Kb/s)","下行(Kb/s)"],
+                    data:[5, 20, 2, 10, 20]
+                },
+                {
+                    name:['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    data:[19, 12, 20, 15, 18, 15, 19]
+                }
+            ],
+}));
+})
 module.exports = router

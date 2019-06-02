@@ -59,12 +59,12 @@
       <div class="teach-title">
         拓扑界面 
       </div> 
-      <div class="teach-console-test"> 
-       <a href="#" @click="getData">连线完成，点击测试</a>
+      <div class="teach-console-test" @click="getData"> 
+     连线完成，点击测试
        <img class="fr" src="../static/images/test.png" width="20px" height="auto" /> 
       </div> 
       <div class="teach-console-submit"> 
-       <a href="#">测试完成，提交结果</a>
+    测试完成，提交结果
        <img class="fr" src="../static/images/submit.png" width="20px" height="auto" /> 
       </div> 
      </div> 
@@ -294,13 +294,13 @@ drawLine(){
             title: { text: 'HS1DS-E信息图表' ,textstyle:{color:'#888888',},left:'center' },
             tooltip: {},
             xAxis: {
-                data: ["开合次数","工作时间(h)","数量","上行(Kb/s)","下行(Kb/s)"]
+                data: []
             },
             yAxis: {},
             series: [{
                 name: '参数',
                 type: 'bar',
-                data: [5, 20, 2, 10, 20]
+                data: []
             }]
         });
 var myChart2 = this.$echarts.init(document.getElementById('myChart2'),'light');
@@ -308,19 +308,45 @@ var myChart2 = this.$echarts.init(document.getElementById('myChart2'),'light');
         xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            data: []
         },
         yAxis: {
             type: 'value'
         },
         series: [{
-            data: [19, 12, 20, 15, 18, 15, 19],
+            data: [],
             type: 'line',
             areaStyle: {}
         }]
     });
-    }
-	
+//loading 动画
+myChart.showLoading();
+myChart2.showLoading();
+//数据的动态更新
+ this.$axios.get("http://"+location.hostname+":4000/api/echartdata").then(function(response){
+//隐藏加载动画
+    myChart.hideLoading();
+    myChart.setOption({
+        xAxis: {
+            data: response.data.echartdata[0].name
+        },
+        series: [{
+            // 根据名字对应到相应的系列
+            name: '参数',
+            data: response.data.echartdata[0].data
+        }]
+    });
+myChart2.hideLoading();
+myChart2.setOption({
+        xAxis: {
+            data: response.data.echartdata[1].name
+        },
+        series: [{
+            data: response.data.echartdata[1].data
+        }]
+    });
+});
+    }	
 },
 computed: {
     user() {
