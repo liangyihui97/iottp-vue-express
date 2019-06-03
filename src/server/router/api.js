@@ -58,7 +58,7 @@ router.route('/echartdata').get((req, res) => {
 	echartdata:[
                 {
                     name:["开合次数","工作时间(h)","数量","上行(Kb/s)","下行(Kb/s)"],
-                    data:[5, 20, 2, 10, 20]
+                    data:{'times':5,'hours': 20, 'num':2, 'Upstream|20-50': 1,'Downtream|50-100': 1}
                 },
                 {
                     name:['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],

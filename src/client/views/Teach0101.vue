@@ -201,6 +201,14 @@ components:{
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
+echartdata:[{
+                    name:["开合次数","工作时间(h)","数量","上行(Kb/s)","下行(Kb/s)"],
+                    data:[]
+                },
+                {
+                    name:[],
+                    data:[],
+                }],
 url:"http://"+location.hostname+":4000/js/qunee0101.js",
       columns: [],
       data: [],
@@ -217,6 +225,11 @@ url:"http://"+location.hostname+":4000/js/qunee0101.js",
     }
   },
     mounted (){
+/////////////////////////////////////
+
+
+this.drawLine();
+
 setInterval(() =>{
 var self = this;
     this.$axios.get("http://"+location.hostname+":4000/api/data1").then(function(response){
@@ -225,8 +238,6 @@ var self = this;
 console.log(error);
 });
 },200000)
-
-this.drawLine();
 
 //this.$axios.get('/v2/music/search?q=周杰伦',).then(function (response) {
 //        self.data2 = response.data.musics;
@@ -321,21 +332,21 @@ var myChart2 = this.$echarts.init(document.getElementById('myChart2'),'light');
     });
 //loading 动画
 myChart.showLoading();
-myChart2.showLoading();
-//数据的动态更新
- this.$axios.get("http://"+location.hostname+":4000/api/echartdata").then(function(response){
-//隐藏加载动画
-    myChart.hideLoading();
-    myChart.setOption({
+myChart.setOption({
         xAxis: {
-            data: response.data.echartdata[0].name
+            data:this.echartdata[0].name
         },
         series: [{
             // 根据名字对应到相应的系列
             name: '参数',
-            data: response.data.echartdata[0].data
+            data: []
         }]
     });
+myChart2.showLoading();
+//数据的动态更新
+ this.$axios.get("http://"+location.hostname+":4000/api/echartdata").then(function(response){
+//隐藏加载动画
+
 myChart2.hideLoading();
 myChart2.setOption({
         xAxis: {
@@ -346,6 +357,27 @@ myChart2.setOption({
         }]
     });
 });
+//动态更新echartdata
+ setInterval(() =>{
+var self = this;
+    this.$axios.get("http://"+location.hostname+":4000/api/echartdata").then(function(response){
+self.echartdata = response.data.echartdata[0];
+
+}).catch(function(error){
+console.log(error);
+});
+myChart.hideLoading();
+myChart.setOption({
+        xAxis: {
+            data:this.echartdata.name
+        },
+        series: [{
+            // 根据名字对应到相应的系列
+            name: '参数',
+            data: [this.echartdata.data['times'],this.echartdata.data['hours'],this.echartdata.data['num'],this.echartdata.data['Upstream'],this.echartdata.data['Downtream']]
+        }]
+    });
+},1000)
     }	
 },
 computed: {
